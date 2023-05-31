@@ -10,18 +10,18 @@
         android:id="@+id/mt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mood Tracking"
         android:layout_centerInParent="true"
-        android:onClick="onClickMoodTracking"/>
+        android:onClick="onClickMoodTracking"
+        android:text="@string/mood_tracking" />
 
     <Button
         android:id="@+id/mg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mood Glazing"
+        android:text="@string/mood_glazing"
         android:layout_below="@id/mt"
         android:layout_centerInParent="true"
         android:layout_marginTop="16dp"
-        android:onClick="onClickMoodglazing"/>
+        android:onClick="onClickMoodGlazing"/>
 
 </RelativeLayout>

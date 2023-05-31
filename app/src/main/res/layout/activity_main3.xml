@@ -31,8 +31,7 @@
             android:id="@+id/radioButtonHappy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:textSize="40sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             tools:text="happy" />
 
@@ -40,36 +39,33 @@
             android:id="@+id/radioButtonSatisfaction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
             android:text="satisfaction"
-            android:textSize="40sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/radioButtonNormal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:text="normal"
-            android:textSize="40sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/radioButtonSad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+
             android:text="sad"
-            android:textSize="40sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/radioButtonAngry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:text="angry"
-            android:textSize="40sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
 
@@ -79,20 +75,19 @@
         android:id="@+id/applyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:text="Apply"
-        android:textSize="40sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
+
         android:id="@+id/resultTextView"
-        android:layout_width="6dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:textColor="@android:color/black"
         android:textSize="35sp"
         android:textStyle="bold"
-        android:text="You are in The Good Track !!"/>
+        android:text="You are in The Good Track !!"
+        android:layout_width="wrap_content"/>
 
 
 </LinearLayout>

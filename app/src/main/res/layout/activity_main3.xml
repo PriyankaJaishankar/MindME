@@ -2,48 +2,59 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:background="@drawable/manifet_chill"
+    android:padding="30dp"
     android:gravity="center_horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <ImageView
+        android:src="@drawable/manifet_chill"
         android:layout_width="100dp"
         android:layout_height="100dp"/>
     
     <TextView
+
+        android:layout_margin="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="How Is Your Feeling Today?" />
-    <LinearLayout
+    <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <RadioButton
+            android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Happy"/>
         <RadioButton
+            android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Satisfaction"/>
         <RadioButton
+            android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Normal"/>
         <RadioButton
+            android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sad"/>
         <RadioButton
+            android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Angry"/>
 
 
-    </LinearLayout>
+    </RadioGroup>
 
     <Button
+        android:layout_margin="10dp"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:text="Apply"/>

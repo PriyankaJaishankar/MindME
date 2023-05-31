@@ -21,10 +21,12 @@
         android:layout_height="wrap_content"
         android:text="How Is Your Feeling Today?" />
     <RadioGroup
+        android:id="@+id/moodRadioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <RadioButton
+            android:id="@+id/happyButton"
             android:textSize="40dp"
             android:textStyle="bold"
             android:layout_margin="10dp"
@@ -32,6 +34,7 @@
             android:layout_height="wrap_content"
             android:text="Happy"/>
         <RadioButton
+            android:id="@+id/satisfactionButton"
             android:textSize="40dp"
             android:textStyle="bold"
             android:layout_margin="10dp"
@@ -39,6 +42,7 @@
             android:layout_height="wrap_content"
             android:text="Satisfaction"/>
         <RadioButton
+            android:id="@+id/normalButton"
             android:textSize="40dp"
             android:textStyle="bold"
             android:layout_margin="10dp"
@@ -46,6 +50,7 @@
             android:layout_height="wrap_content"
             android:text="Normal"/>
         <RadioButton
+            android:id="@+id/sadButton"
             android:textSize="40dp"
             android:textStyle="bold"
             android:layout_margin="10dp"
@@ -53,6 +58,7 @@
             android:layout_height="wrap_content"
             android:text="Sad"/>
         <RadioButton
+            android:id="@+id/angryButton"
             android:textSize="40dp"
             android:textStyle="bold"
             android:layout_margin="10dp"
@@ -64,6 +70,7 @@
     </RadioGroup>
 
     <Button
+
         android:textSize="40dp"
         android:textStyle="bold"
         android:layout_margin="10dp"

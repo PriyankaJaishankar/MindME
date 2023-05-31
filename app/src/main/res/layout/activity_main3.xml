@@ -9,14 +9,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:src="@drawable/manifet_chill"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
-    
+
     <TextView
 
         android:layout_margin="10dp"
+        android:textSize="60dp"
+        android:textStyle="bold"
+        android:layout_marginVertical="167dp"
+        android:layout_marginHorizontal="87dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="How Is Your Feeling Today?" />
@@ -25,26 +25,36 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <RadioButton
+            android:textSize="40dp"
+            android:textStyle="bold"
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Happy"/>
         <RadioButton
+            android:textSize="40dp"
+            android:textStyle="bold"
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Satisfaction"/>
         <RadioButton
+            android:textSize="40dp"
+            android:textStyle="bold"
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Normal"/>
         <RadioButton
+            android:textSize="40dp"
+            android:textStyle="bold"
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sad"/>
         <RadioButton
+            android:textSize="40dp"
+            android:textStyle="bold"
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -54,6 +64,8 @@
     </RadioGroup>
 
     <Button
+        android:textSize="40dp"
+        android:textStyle="bold"
         android:layout_margin="10dp"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"

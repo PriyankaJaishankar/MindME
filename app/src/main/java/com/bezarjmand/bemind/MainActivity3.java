@@ -40,7 +40,28 @@ public class MainActivity3 extends AppCompatActivity {
     }
 
     private void displayInfo(String optionText) {
-        String info = "Happy"; // Add your information here based on the selected optionText
+        String info;
+        switch (optionText) {
+            case "satisfaction":
+                info = "You have selected satisfaction";
+                break;
+            case "normal":
+                info = "You have selected normal";
+                break;
+            case "sad":
+                info = "You have selected sad";
+                break;
+            case "angry":
+                info = "You have selected angry";
+                break;
+            case "happy":
+                info = "You have selected happy";
+                break;
+            default:
+                info = "No option selected.";
+                break;
+        }
+
         resultTextView.setText(info);
         resultTextView.setVisibility(View.VISIBLE);
     }

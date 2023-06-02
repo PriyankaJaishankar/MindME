@@ -57,6 +57,12 @@ public class MainActivity3 extends AppCompatActivity {
             case "happy":
                 info = "You have selected happy";
                 break;
+            case "anxiety":
+                info = "You have selected anxiety";
+                break;
+            case "frustration":
+                info = "You have selected frustration";
+                break;
             default:
                 info = "No option selected.";
                 break;

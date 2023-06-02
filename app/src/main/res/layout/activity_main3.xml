@@ -1,45 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:background="@drawable/manifet_chill"
-    android:padding="30dp"
-    android:gravity="center_horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/manifet_chill"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="30dp"
+    app:layout_anchorGravity="right"
     tools:context=".MainActivity">
 
 
     <TextView
 
-        android:layout_margin="10dp"
-        android:textSize="60sp"
-        android:textStyle="bold"
-        android:layout_marginVertical="167dp"
-        android:layout_marginHorizontal="87dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="how is your feeling today?" />
+        android:layout_margin="10dp"
+        android:layout_marginHorizontal="87dp"
+        android:layout_marginVertical="167dp"
+        android:text="how is your feeling today?"
+        android:textSize="60sp"
+        android:textStyle="bold" />
 
     <RadioGroup
         android:id="@+id/moodRadioGroup"
         android:layout_width="wrap_content"
-        android:layout_height="272dp"
+        android:layout_height="336dp"
+        android:layout_gravity="left"
         android:orientation="vertical">
 
-        <RadioButton
-            android:id="@+id/radioButtonSatisfaction"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="satisfaction"
-            android:textSize="20sp"
-            android:textStyle="bold" />
 
         <RadioButton
-            android:id="@+id/radioButtonNormal"
-            android:layout_width="wrap_content"
+            android:id="@+id/radioButtonHappy"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="normal"
+            android:text="happy"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -53,21 +50,44 @@
             android:textStyle="bold" />
 
         <RadioButton
-            android:id="@+id/radioButtonAngry"
-            android:layout_width="wrap_content"
+            android:id="@+id/radioButtonAnxiety"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="angry"
+            android:text="anxiety"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <RadioButton
-            android:id="@+id/radioButtonHappy"
-            android:layout_width="match_parent"
+            android:id="@+id/radioButtonSatisfaction"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="happy"
+            android:text="satisfaction"
             android:textSize="20sp"
             android:textStyle="bold" />
 
+        <RadioButton
+            android:id="@+id/radioButtonFrustration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="frustration"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radioButtonNormal"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:text="normal"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radioButtonAngry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="angry"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </RadioGroup>
 
@@ -82,11 +102,11 @@
     <TextView
 
         android:id="@+id/resultTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
         android:textSize="35sp"
         android:textStyle="bold"
-        android:visibility="gone"
-        android:layout_width="wrap_content"/>
+        android:visibility="gone" />
 
 </LinearLayout>

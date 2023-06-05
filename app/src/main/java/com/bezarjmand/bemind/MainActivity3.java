@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity3 extends AppCompatActivity {
 
-    private RadioGroup moodRadioGroup;
+    private RadioGroup radioGroup;
     private Button applyButton;
     private TextView resultTextView;
 
@@ -22,14 +22,14 @@ public class MainActivity3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
-        moodRadioGroup = findViewById(R.id.moodRadioGroup);
+        radioGroup = findViewById(R.id.radioGroup);
         applyButton = findViewById(R.id.applyButton);
         resultTextView = findViewById(R.id.resultTextView);
 
         applyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int selectedId = moodRadioGroup.getCheckedRadioButtonId();
+                int selectedId = radioGroup.getCheckedRadioButtonId();
                 RadioButton selectedRadioButton = findViewById(selectedId);
                 if (selectedRadioButton != null) {
                     String optionText = selectedRadioButton.getText().toString();
@@ -42,29 +42,38 @@ public class MainActivity3 extends AppCompatActivity {
     private void displayInfo(String optionText) {
         String info;
         switch (optionText) {
-            case "satisfaction":
-                info = "You have selected satisfaction";
-                break;
-            case "normal":
-                info = "You have selected normal";
+            case "happy":
+                info = "Happiness is a choice, so choose to be happy.";
                 break;
             case "sad":
-                info = "You have selected sad";
+                info = "Every storm eventually runs out of rain.";
+                break;
+            case "normal":
+                info = "Embrace the ordinary moments, for they make up the fabric of life.";
+                break;
+            case "satisfied":
+                info = "Satisfaction comes from within, celebrate your accomplishments.";
+                break;
+            case "calm":
+                info = "In the midst of chaos, find your inner peace.";
+                break;
+            case "frustrated":
+                info = "Obstacles are opportunities in disguise, keep pushing forward.";
+                break;
+            case "anxious":
+                info = "Don't let worry steal your present, focus on the present moment.";
                 break;
             case "angry":
-                info = "You have selected angry";
+                info = "Choose forgiveness over anger, and watch your burdens disappear.";
                 break;
-            case "happy":
-                info = "You have selected happy";
+            case "lonely":
+                info = "Reach out, for there are people who care and want to be there for you.";
                 break;
-            case "anxiety":
-                info = "You have selected anxiety";
-                break;
-            case "frustration":
-                info = "You have selected frustration";
+            case "tired":
+                info = "Rest when you're weary, but never give up on your dreams.";
                 break;
             default:
-                info = "No option selected.";
+                info = "Select an Option!";
                 break;
         }
 

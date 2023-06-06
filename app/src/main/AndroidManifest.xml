@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BeMind"
         tools:targetApi="31">
+        <activity android:name=".ViewHistory" />
+
         <activity
             android:name=".MainActivity4"
             android:exported="false" />

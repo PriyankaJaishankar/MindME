@@ -30,7 +30,7 @@ public class MainActivity2 extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
+                Intent intent = new Intent(MainActivity2.this, MainActivity4.class);
                 startActivity(intent);
             }
         });

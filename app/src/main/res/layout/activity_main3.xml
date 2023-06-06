@@ -1,156 +1,144 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/manifet_chill"
-    android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="30dp"
-    app:layout_anchorGravity="right"
-    tools:context=".MainActivity">
+    android:padding="16dp">
 
+    <!-- Add a TextView to display the question -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginHorizontal="87dp"
-        android:layout_marginVertical="167dp"
-        android:text="how are you feeling today?"
-        android:textSize="48sp"
-        android:textStyle="bold" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/feelingTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:paddingBottom="8dp"
+        android:text="How are you feeling today?"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="34sp" />
 
-        <GridLayout
-            android:layout_width="match_parent"
+    <!-- Add a GridLayout to hold the mood options -->
+    <GridLayout
+        android:id="@+id/moodGridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:alignmentMode="alignMargins"
+        android:columnCount="3"
+        android:columnOrderPreserved="false"
+        android:rowCount="5">
+
+        <!-- Add Button views for each mood option -->
+        <Button
+            android:id="@+id/happyButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:columnCount="2">
+            android:text="Happy" />
 
-            <RadioButton
-                android:id="@+id/radioButtonHappy"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:text="happy"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+        <!-- Add buttons for the rest of the mood options -->
+        <Button
+            android:id="@+id/sadButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sad" />
 
-            <RadioButton
-                android:id="@+id/radioButtonSad"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:text="sad"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+        <Button
+            android:id="@+id/normalEmotionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Normal" />
 
-            <RadioButton
-                android:id="@+id/radioButtonNormal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:text="normal"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+        <Button
+            android:id="@+id/satisfiedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Satisfied" />
 
-            <RadioButton
-                android:id="@+id/radioButtonSatisfied"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:text="satisfied"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+        <Button
+            android:id="@+id/calmButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calm" />
 
-            <RadioButton
-                android:id="@+id/radioButtonCalm"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:text="calm"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+        <Button
+            android:id="@+id/frustratedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Frustrated" />
 
-            <RadioButton
-                android:id="@+id/radioButtonFrustrated"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:text="frustrated"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+        <Button
+            android:id="@+id/anxiousButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anxious" />
 
-            <RadioButton
-                android:id="@+id/radioButtonAnxious"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:text="anxious"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+        <Button
+            android:id="@+id/angryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Angry" />
 
+        <Button
+            android:id="@+id/lonelyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lonely" />
 
-            <RadioButton
-                android:id="@+id/radioButtonAngry"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                android:text="angry"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+        <Button
+            android:id="@+id/tiredButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tired" />
 
-            <RadioButton
-                android:id="@+id/radioButtonLonely"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:text="lonely"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+        <Button
+            android:id="@+id/boredButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bored" />
 
-            <RadioButton
-                android:id="@+id/radioButtonTired"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:text="tired"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+        <Button
+            android:id="@+id/sleepyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sleepy" />
 
-        </GridLayout>
+    </GridLayout>
 
-    </RadioGroup>
-
+    <!-- Add an Apply button -->
     <Button
         android:id="@+id/applyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Apply"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:text="Apply" />
 
+    <!-- Add a TextView to display the selected mood -->
     <TextView
-        android:id="@+id/resultTextView"
+        android:id="@+id/selectedMoodTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:text="Select an option and click apply!"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <!-- Add a TextView to display the corresponding message -->
+    <TextView
+        android:id="@+id/moodInfoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="48dp" />
+
+    <!-- Add a "View History" button -->
+    <Button
+        android:id="@+id/viewHistoryButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        android:visibility="gone" />
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="View History" />
 
 </LinearLayout>

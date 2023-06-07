@@ -2,5 +2,12 @@
     <string name="app_name">BeMind</string>
     <string name="mood_tracking">Mood Tracking</string>
     <string name="mood_glazing">Mood Glazing</string>
+    <string name="_4_exhale_slowly_through_your_mouth_allowing_your_abdomen_to_fall_naturally_as_you_release_the_breath">4. Exhale slowly through your mouth, allowing your abdomen to fall naturally as you release the breath.</string>
+    <string name="_3_take_a_slow_deep_breath_in_through_your_nose_allowing_your_abdomen_to_rise_as_you_fill_your_lungs_with_air">3. Take a slow, deep breath in through your nose, allowing your abdomen to rise as you fill your lungs with air.</string>
+    <string name="_2_place_one_hand_on_your_abdomen_just_below_your_ribcage_and_the_other_hand_on_your_chest">2. Place one hand on your abdomen, just below your ribcage, and the other hand on your chest.</string>
+    <string name="follow_these_steps_to_practice_deep_belly_breathing">Follow these steps to practice deep belly breathing:</string>
+    <string name="_5_continue_this_pattern_of_deep_breathing_focusing_on_the_gentle_rise_and_fall_of_your_abdomen_with_each_breath">5. Continue this pattern of deep breathing, focusing on the gentle rise and fall of your abdomen with each breath.</string>
+    <string name="_1_find_a_comfortable_sitting_or_lying_position">1. Find a comfortable sitting or lying position.</string>
+    <string name="follow_the_steps_to_scan_your_body">Follow the steps to scan your body</string>
 
 </resources>

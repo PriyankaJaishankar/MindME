@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    tools:context=".MainActivity6"
+    android:background="@drawable/manifet_chill">
+
+    <TextView
+        android:id="@+id/instructionsTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/follow_the_steps_to_scan_your_body"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/step1TextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="1.Find a comfortable and quiet space to sit or lie down."
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/step2TextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2.Close your eyes and take a few deep breaths to relax."
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/step3TextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3.Bring your attention to your feet and notice any sensations there. Release any tension or discomfort as you exhale."
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/step4TextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+android:text="4.Slowly move your attention up through each part of your body and Release tension with each exhale."        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/step5TextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+android:text="5.Continue moving your attention through your lower legs, knees, thighs, hips, lower back, and abdomen."        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="16dp"/>
+    <TextView
+        android:id="@+id/step6TextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+android:text="6.Shift your focus to your chest, upper back, shoulders, and arms. Release any tension with each breath."        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/step7TextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+android:text="7.Direct your attention to your neck, throat, head, and face. Soften the muscles and let go of any tension."        android:textColor="@android:color/black"
+        android:layout_marginBottom="8dp"/>
+    <TextView
+        android:id="@+id/step8TextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+android:text="8.Take a moment to bring your awareness to your entire body, feeling a sense of relaxation and peace."        android:layout_marginBottom="8dp"/>
+    <Button
+        android:id="@+id/audioButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play Audio"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="8dp"/>
+    <Button
+        android:id="@+id/backButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="8dp"/>
+
+
+
+</LinearLayout>

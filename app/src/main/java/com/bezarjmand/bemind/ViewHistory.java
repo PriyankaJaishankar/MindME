@@ -60,4 +60,3 @@ public class ViewHistory extends AppCompatActivity {
         });
     }
 }
-

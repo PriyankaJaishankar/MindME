@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="@drawable/manifet_chill">
+    android:background="@drawable/kenrick_mills_hu8h6yajyb0_unsplash">
 
     <Button
         android:id="@+id/BreathingExercises"

@@ -1,18 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<!-- activity_main.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity4">
+    android:gravity="center"
+    android:background="@drawable/manifet_chill">
 
     <Button
-        android:id="@+id/backToMainButton"
+        android:id="@+id/BreathingExercises"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="Breathing Exercises"
+        android:layout_centerInParent="true" />
+
+    <Button
+        android:id="@+id/BodyScan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Body Scan"
+        android:layout_below="@id/BreathingExercises"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/MindfulWalking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mindful Walking"
+        android:layout_below="@id/BodyScan"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
+

@@ -1,6 +1,5 @@
 package com.bezarjmand.bemind;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,11 +17,17 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
     private TextView moodInfoTextView;
     private List<String> selectedMoods;
 
-    @SuppressLint("MissingInflatedId")
+    private DatabaseHelper databaseHelper;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
+
+
+        // Initialize the DatabaseHelper
+        databaseHelper = new DatabaseHelper(this);
 
         // Find views by their IDs
         selectedMoodTextView = findViewById(R.id.selectedMoodTextView);
@@ -56,6 +61,8 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
 
                 // Add the selected mood to the list
                 selectedMoods.add(selectedMood);
+                // Insert the selected mood into the database
+                databaseHelper.insertMood(selectedMood);
 
                 // Display the corresponding message for the selected mood
                 switch (selectedMood) {

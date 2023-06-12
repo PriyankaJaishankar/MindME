@@ -1,117 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
     android:padding="16dp"
-    tools:context=".MainActivity7"
-    android:background="@drawable/bernard_hermant_z9aoxtyqby4_unsplash">
+    tools:context=".MainActivity"
+    android:backgroundTint="@color/design_default_color_primary"
+    >
 
     <TextView
-        android:id="@+id/instructionsTextView3"
+        android:id="@+id/stepbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tips for practicing mindful walking meditation"
-        android:textSize="18sp"
+        android:text="Here is Walking Meditation.\nFollow The Steps Below:"
+        android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="16dp"/>
+        android:gravity="center"
+        android:layout_centerInParent="true"/>
 
     <TextView
-        android:id="@+id/step1TextView3"
+        android:id="@+id/stepbt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="1.Find a quiet location to walk."
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
+        android:layout_below="@id/stepbt"
+        android:layout_marginTop="16dp"
+        android:text="Step 1: Find a suitable location."
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
-        android:id="@+id/step2TextView3"
+        android:id="@+id/stepbt2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2.Stand with awareness before starting."
-        android:textSize="16sp"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="8dp"/>
+        android:layout_below="@id/stepbt1"
+        android:layout_marginTop="16dp"
+        android:text="Step 2: Stand mindfully and become aware of your body."
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
-        android:id="@+id/step3TextView3"
+        android:id="@+id/stepbt3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3.Walk slowly and pay attention to each step."
-        android:textSize="16sp"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="8dp"/>
+        android:layout_below="@id/stepbt2"
+        android:layout_marginTop="16dp"
+        android:text="Step 3: Walk slowly and deliberately, focusing on the sensations in your feet and legs."
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:id="@+id/stepbt4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stepbt3"
+        android:layout_marginTop="16dp"
+        android:text="Step 4: Stay present, gently bringing your attention back if it wanders."
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:id="@+id/stepbt5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stepbt4"
+        android:layout_marginTop="16dp"
+        android:text="Step 5: Observe your surroundings without judgment."
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
 
-    <TextView
-        android:id="@+id/step4TextView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="4.Stay present and engage your senses."
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="8dp"/>
-
-    <TextView
-        android:id="@+id/step5TextView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="5.Observe your surroundings and be fully present."
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="16dp"/>
-    <TextView
-        android:id="@+id/step6TextView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="6.Maintain a relaxed and upright posture."
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="8dp"/>
-
-    <TextView
-        android:id="@+id/step7TextView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="7.Choose a comfortable pace."
-        android:layout_marginBottom="8dp"/>
-    <TextView
-        android:id="@+id/step8TextView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="8.Bring your focus back to walking if the mind wanders."
-        android:layout_marginBottom="8dp"/>
-
-    <TextView
-        android:id="@+id/step9TextView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="9.Practice rhythmic breathing to anchor your attention"
-        android:layout_marginBottom="8dp"/>
-
-    <TextView
-        android:id="@+id/step8TextView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="10.Be patient and non-judgmental with yourself."
-        android:layout_marginBottom="8dp"/>
 
     <Button
         android:id="@+id/audioButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/stepbt5"
         android:text="Play Audio"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="8dp"/>
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:id="@+id/backButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/audioButton3"
         android:text="Back"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="8dp"/>
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"/>
 
-
-
-</LinearLayout>
+</RelativeLayout>

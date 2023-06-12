@@ -1,81 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
     android:padding="16dp"
     tools:context=".MainActivity"
-    android:background="@drawable/manifet_chill">
+    android:backgroundTint="@color/design_default_color_primary"
+    >
 
     <TextView
-        android:id="@+id/instructionsTextView"
+        android:id="@+id/stepbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/follow_these_steps_to_practice_deep_belly_breathing"
-        android:textColor="@android:color/black"
+        android:text="This Is The Breathing Exercise.\nFollow The Steps Below:"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/stepbt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stepbt"
+        android:layout_marginTop="16dp"
+        android:text="Step 1: Take a deep breath in through your nose."
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
-        android:id="@+id/step1TextView"
+        android:id="@+id/stepbt2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="@string/_1_find_a_comfortable_sitting_or_lying_position"
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
+        android:layout_below="@id/stepbt1"
+        android:layout_marginTop="16dp"
+        android:text="Step 2: Hold your breath for a moment."
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
-        android:id="@+id/step2TextView"
+        android:id="@+id/stepbt3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_2_place_one_hand_on_your_abdomen_just_below_your_ribcage_and_the_other_hand_on_your_chest"
-        android:textSize="16sp"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="8dp"/>
-
+        android:layout_below="@id/stepbt2"
+        android:layout_marginTop="16dp"
+        android:text="Step 3: Exhale slowly and fully through your mouth."
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
     <TextView
-        android:id="@+id/step3TextView"
+        android:id="@+id/stepbt4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_3_take_a_slow_deep_breath_in_through_your_nose_allowing_your_abdomen_to_rise_as_you_fill_your_lungs_with_air"
-        android:textSize="16sp"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="8dp"/>
-
+        android:layout_below="@id/stepbt3"
+        android:layout_marginTop="16dp"
+        android:text="Step 4: Exhale slowly and fully through your mouth."
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
     <TextView
-        android:id="@+id/step4TextView"
+        android:id="@+id/stepbt5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_4_exhale_slowly_through_your_mouth_allowing_your_abdomen_to_fall_naturally_as_you_release_the_breath"
-        android:textSize="16sp"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="8dp"/>
+        android:layout_below="@id/stepbt4"
+        android:layout_marginTop="16dp"
+        android:text="Step 5: Pause for a moment before the next breath."
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
 
-    <TextView
-        android:id="@+id/step5TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/_5_continue_this_pattern_of_deep_breathing_focusing_on_the_gentle_rise_and_fall_of_your_abdomen_with_each_breath"
-        android:textSize="16sp"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="16dp"/>
+
     <Button
         android:id="@+id/audioButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/play_audio"
-        android:layout_marginEnd="8dp"/>
+        android:layout_below="@id/stepbt5"
+        android:text="Play Audio"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"/>
+
     <Button
-        android:id="@+id/backButton"
+        android:id="@+id/backButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/back"
-        android:layout_marginEnd="8dp"/>
+        android:layout_below="@id/audioButton"
+        android:text="Back"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"/>
 
-
-
-</LinearLayout>
+</RelativeLayout>

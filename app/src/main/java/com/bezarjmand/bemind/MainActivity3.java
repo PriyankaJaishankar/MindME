@@ -66,40 +66,40 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
 
                 // Display the corresponding message for the selected mood
                 switch (selectedMood) {
-                    case "Happy":
+                    case "Glücklich\uD83D\uDE04":
                         moodInfoTextView.setText("Happiness is a choice, so choose to be happy!");
                         break;
-                    case "Sad":
+                    case "Traurig\uD83D\uDE22":
                         moodInfoTextView.setText("Every storm eventually runs out of rain!");
                         break;
-                    case "Normal":
+                    case "Normal\uD83D\uDE10":
                         moodInfoTextView.setText("Embrace the ordinary moments, for they make up the fabric of life!");
                         break;
-                    case "Satisfied":
+                    case "Zufrieden\uD83D\uDE0A":
                         moodInfoTextView.setText("Satisfaction is the stepping stone to contentment!");
                         break;
-                    case "Calm":
+                    case "Ruhig\uD83D\uDE0C":
                         moodInfoTextView.setText("Find calmness within yourself amidst the chaos!");
                         break;
-                    case "Frustrated":
+                    case "Frustriert\uD83D\uDE20":
                         moodInfoTextView.setText("Take a deep breath, step back, and find a new perspective!");
                         break;
-                    case "Anxious":
+                    case "Ängstlich\uD83D\uDE1F":
                         moodInfoTextView.setText("Acknowledge your anxiety and take small steps towards managing it!");
                         break;
-                    case "Angry":
+                    case "Wütend\uD83D\uDE21":
                         moodInfoTextView.setText("Anger is temporary; let it pass and choose peace!");
                         break;
-                    case "Lonely":
+                    case "Einsam\uD83D\uDE14":
                         moodInfoTextView.setText("Reach out to loved ones and build connections!");
                         break;
-                    case "Tired":
+                    case "Müde\uD83D\uDE2B":
                         moodInfoTextView.setText("Rest, rejuvenate, and bounce back stronger!");
                         break;
-                    case "Bored":
+                    case "Langweilig\uD83D\uDE12":
                         moodInfoTextView.setText("Discover new hobbies and ignite your curiosity!");
                         break;
-                    case "Sleepy":
+                    case "Schläfrig\uD83D\uDE34":
                         moodInfoTextView.setText("Get some quality sleep and wake up refreshed!");
                         break;
                     default:

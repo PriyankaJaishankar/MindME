@@ -1,10 +1,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E1D3BA"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@drawable/john_jason_kuskiozivrg_unsplash">
+    android:padding="16dp">
 
     <!-- Add a TextView to display the question -->
     <TextView
@@ -15,7 +16,7 @@
         android:text="How are you feeling today?"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="24sp" />
+        android:textSize="34sp" />
 
     <!-- Add a GridLayout to hold the mood options -->
     <GridLayout
@@ -24,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:alignmentMode="alignMargins"
-        android:columnCount="3"
+        android:columnCount="4"
         android:columnOrderPreserved="false"
         android:rowCount="5">
 
@@ -33,86 +34,101 @@
             android:id="@+id/happyButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="120dp"
-            android:text="Happy" />
+            android:width="160dp"
+            android:text="Glücklich😄"
+            android:textSize="20sp" />
 
         <!-- Add buttons for the rest of the mood options -->
         <Button
             android:id="@+id/sadButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="120dp"
-            android:text="Sad" />
+            android:width="160dp"
+            android:text="Traurig😢"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/normalEmotionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="120dp"
-            android:text="Normal" />
+            android:width="160dp"
+            android:text="Normal😐"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/satisfiedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="120dp"
-            android:text="Satisfied" />
+            android:width="160dp"
+            android:text="Zufrieden😊"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/calmButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="120dp"
-            android:text="Calm" />
+            android:width="160dp"
+            android:text="Ruhig😌"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/frustratedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="120dp"
-            android:text="Frustrated" />
+            android:width="160dp"
+            android:text="Frustriert😠"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/anxiousButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="120dp"
-            android:text="Anxious" />
+            android:width="160dp"
+            android:text="Ängstlich😟"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/angryButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="120dp"
-            android:text="Angry" />
+            android:width="160dp"
+            android:text="Wütend😡"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/lonelyButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="120dp"
-            android:text="Lonely" />
+            android:width="160dp"
+            android:text="Einsam😔"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/tiredButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="120dp"
-            android:text="Tired" />
+            android:width="160dp"
+            android:text="Müde😫"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/boredButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="120dp"
-            android:text="Bored" />
+            android:width="160dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="Langweilig😒"
+            android:textSize="20sp"
+            app:iconPadding="8dp" />
 
         <Button
             android:id="@+id/sleepyButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="120dp"
-            android:text="Sleepy" />
+            android:width="160dp"
+            android:text="Schläfrig😴"
+            android:textSize="20sp" />
 
     </GridLayout>
 
@@ -122,8 +138,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="5dp"
-        android:text="Apply" />
+        android:layout_margin="10dp"
+        android:text="Apply"
+        android:textSize="20sp"
+        android:textStyle="normal" />
 
     <!-- Add a TextView to display the selected mood -->
     <TextView
@@ -134,7 +152,7 @@
         android:text="Select an option and click apply!"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="14sp" />
+        android:textSize="20sp" />
 
     <!-- Add a TextView to display the corresponding message -->
     <TextView
@@ -144,7 +162,7 @@
         android:paddingTop="16dp"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="24sp" />
+        android:textSize="34sp" />
 
     <!-- Add a "View History" button -->
     <Button
@@ -153,6 +171,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="1dp"
-        android:text="View History" />
+        android:text="View History"
+        android:textSize="16sp" />
 
 </LinearLayout>

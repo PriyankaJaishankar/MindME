@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -100,6 +101,13 @@ public class ViewHistory extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button clearHistoryButton = findViewById(R.id.clearHistoryButton);
+        clearHistoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clearHistory();
+            }
+        });
     }
 
     private List<String> fetchMoodData() {
@@ -124,25 +132,57 @@ public class ViewHistory extends AppCompatActivity {
         // Adjust this logic based on your mood scale
         float value = 0;
         switch (mood) {
-            case "Happy":
+            case "Glücklich\uD83D\uDE04":
+                value = 12;
+                break;
+            case "Zufrieden\uD83D\uDE0A":
+                value = 11;
+                break;
+            case "Normal\uD83D\uDE10":
+                value = 10;
+                break;
+            case "Ruhig\uD83D\uDE0C":
+                value = 9;
+                break;
+            case "Traurig\uD83D\uDE22":
+                value = 8;
+                break;
+            case "Frustriert\uD83D\uDE20":
+                value = 7;
+                break;
+            case "Ängstlich\uD83D\uDE1F":
+                value = 6;
+                break;
+            case "Wütend\uD83D\uDE21":
                 value = 5;
                 break;
-            case "Normal":
+            case "Einsam\uD83D\uDE14":
                 value = 4;
                 break;
-            case "Satisfied":
+            case "Müde\uD83D\uDE2B":
                 value = 3;
                 break;
-            case "Sad":
+            case "Langweilig\uD83D\uDE12":
                 value = 2;
                 break;
-            case "Angry":
+            case "Schläfrig\uD83D\uDE34":
                 value = 1;
                 break;
         }
         return value;
 
 
+    }
+    private void clearHistory() {
+        // Clear the history from the database
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
+        db.delete(DatabaseHelper.TABLE_MOOD_HISTORY, null, null);
+
+        // Display a message that the history is cleared
+        Toast.makeText(this, "History cleared", Toast.LENGTH_SHORT).show();
+
+        // Refresh the activity to update the chart and mood list
+        recreate();
     }
 
 

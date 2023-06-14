@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt5"
         android:text="Play Audio"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"/>
 
     <Button

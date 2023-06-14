@@ -1,3 +1,4 @@
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,7 +14,7 @@
         android:id="@+id/stepbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Here IS Breathing Exercises\nFollow The Steps Below:"
+        android:text="Here is Mantra Meditation\nFollow The Steps Below:"
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -25,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt"
         android:layout_marginTop="16dp"
-        android:text="Step 1: Find a comfortable position and relax your body."
+        android:text="Step 1: Find a quiet and comfortable place to sit."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -36,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt1"
         android:layout_marginTop="16dp"
-        android:text="Step 2: Inhale deeply through your nose, filling your lungs with air."
+        android:text="Step 2: Close your eyes and take a few deep breaths to relax."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -47,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt2"
         android:layout_marginTop="16dp"
-        android:text="Step 3: Exhale slowly through your mouth, releasing any tension or stress."
+        android:text="Step 3: Focus your attention on the sounds around you, both near and far."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -57,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt3"
         android:layout_marginTop="16dp"
-        android:text="Step 4: Count your breaths to help maintain a steady rhythm."
+        android:text="Step 4: Notice the different sounds without judgment, allowing them to come and go."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -67,26 +68,26 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt4"
         android:layout_marginTop="16dp"
-        android:text="Step 5:Stay present and bring your attention to the sensations of each breath."
+        android:text="Step 5: Stay present and fully immerse yourself in the auditory experience."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
 
 
     <Button
-        android:id="@+id/audioButton1"
-        android:layout_width="127dp"
-        android:layout_height="79dp"
-        android:layout_below="@id/stepbt5"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
-        android:text="Play Audio" />
-
-    <Button
-        android:id="@+id/backButton1"
+        android:id="@+id/audioButton6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/audioButton1"
+        android:layout_below="@id/stepbt5"
+        android:text="Play Audio"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/backButton6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/audioButton6"
         android:text="Back"
         android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true"/>

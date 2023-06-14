@@ -1,9 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity7">
+    android:gravity="center"
+    android:padding="16dp"
+    tools:context=".MainActivity"
+    android:backgroundTint="@color/design_default_color_primary"
+    >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/stepbt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Here is Loving Kindness Meditation\nFollow The Steps Below:"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/stepbt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stepbt"
+        android:layout_marginTop="16dp"
+        android:text="Step 1: Find a comfortable position and close your eyes."
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/stepbt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stepbt1"
+        android:layout_marginTop="16dp"
+        android:text="Step 2: Generate loving-kindness towards yourself."
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/stepbt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stepbt2"
+        android:layout_marginTop="16dp"
+        android:text="Step 3: Extend loving-kindness towards a loved one."
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:id="@+id/stepbt4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stepbt3"
+        android:layout_marginTop="16dp"
+        android:text="Step 4: Expand the circle of loving-kindness to include neutral and difficult people."
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:id="@+id/stepbt5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stepbt4"
+        android:layout_marginTop="16dp"
+        android:text="Step 5: Sit in stillness, experiencing the warmth of loving-kindness."
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
+
+
+    <Button
+        android:id="@+id/audioButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stepbt5"
+        android:text="Play Audio"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/backButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/audioButton4"
+        android:text="Back"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

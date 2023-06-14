@@ -31,7 +31,7 @@ public class MainActivity5 extends AppCompatActivity implements View.OnClickList
             }
         });
 
-        Button playButton = findViewById(R.id.audioButton);
+        Button playButton = findViewById(R.id.audioButton1);
         Button backButton = findViewById(R.id.backButton1);
 
         playButton.setOnClickListener(this);
@@ -41,7 +41,7 @@ public class MainActivity5 extends AppCompatActivity implements View.OnClickList
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
-        if (view.getId() == R.id.audioButton) {
+        if (view.getId() == R.id.audioButton1) {
             String text = "Follow these steps to have the breathing exercise";
             speakText(text);
         } else if (view.getId() == R.id.backButton1) {

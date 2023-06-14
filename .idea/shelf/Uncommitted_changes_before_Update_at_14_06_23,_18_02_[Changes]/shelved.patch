@@ -1,0 +1,854 @@
+Index: app/src/main/java/com/bezarjmand/bemind/MainActivity4.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.bezarjmand.bemind;\n\nimport android.content.Intent;\nimport android.os.Bundle;\nimport android.view.View;\nimport android.widget.Button;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\npublic class MainActivity4 extends AppCompatActivity {\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_main4);\n\n        Button breathingExercises = findViewById(R.id.BreathingExercises);\n        Button bodyScan = findViewById(R.id.BodyScan);\n        Button mindfulWalking = findViewById(R.id.MindfulWalking);\n\n        breathingExercises.setOnClickListener(new View.OnClickListener() {\n            @Override\n            public void onClick(View v) {\n                startActivity(new Intent(MainActivity4.this, MainActivity5.class));\n            }\n        });\n\n        bodyScan.setOnClickListener(new View.OnClickListener() {\n            @Override\n            public void onClick(View v) {\n                startActivity(new Intent(MainActivity4.this, MainActivity6.class));\n            }\n        });\n\n        mindfulWalking.setOnClickListener(new View.OnClickListener() {\n            @Override\n            public void onClick(View v) {\n                startActivity(new Intent(MainActivity4.this, MainActivity7.class));\n            }\n        });\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/bezarjmand/bemind/MainActivity4.java b/app/src/main/java/com/bezarjmand/bemind/MainActivity4.java
+--- a/app/src/main/java/com/bezarjmand/bemind/MainActivity4.java	(revision 2753436d9bce119bb43f7a3ccfda26047a56b89c)
++++ b/app/src/main/java/com/bezarjmand/bemind/MainActivity4.java	(date 1686758318275)
+@@ -2,41 +2,111 @@
+ 
+ import android.content.Intent;
+ import android.os.Bundle;
++import android.speech.tts.TextToSpeech;
+ import android.view.View;
+ import android.widget.Button;
+ 
+ import androidx.appcompat.app.AppCompatActivity;
+ 
++import java.util.Locale;
++
+ public class MainActivity4 extends AppCompatActivity {
+ 
++    Button breathingExercisesButton, bodyScanButton, mindfulWalkingButton, lovingKindnessButton, mantraButton, soundButton;
++    TextToSpeech textToSpeech;
++
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_main4);
+ 
+-        Button breathingExercises = findViewById(R.id.BreathingExercises);
+-        Button bodyScan = findViewById(R.id.BodyScan);
+-        Button mindfulWalking = findViewById(R.id.MindfulWalking);
++        breathingExercisesButton = findViewById(R.id.BreathingExercises);
++        bodyScanButton = findViewById(R.id.BodyScan);
++        mindfulWalkingButton = findViewById(R.id.MindfulWalking);
++        lovingKindnessButton = findViewById(R.id.lovingandkindness);
++        mantraButton = findViewById(R.id.Mantra);
++        soundButton = findViewById(R.id.Sound);
++
++        textToSpeech = new TextToSpeech(MainActivity4.this, new TextToSpeech.OnInitListener() {
++            @Override
++            public void onInit(int status) {
++                if (status == TextToSpeech.SUCCESS) {
++                    textToSpeech.setLanguage(Locale.ENGLISH);
++                }
++            }
++        });
++
++        breathingExercisesButton.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                String textToRead = "Text for Breathing Exercises";
++                speakText(textToRead);
++                navigateToPage(MainActivity5.class, textToRead);
++            }
++        });
++
++        bodyScanButton.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                String textToRead = "Text for Body Scan";
++                speakText(textToRead);
++                navigateToPage(MainActivity6.class, textToRead);
++            }
++        });
+ 
+-        breathingExercises.setOnClickListener(new View.OnClickListener() {
++        mindfulWalkingButton.setOnClickListener(new View.OnClickListener() {
++            @Override
++            public void onClick(View v) {
++                String textToRead = "Text for Mindful Walking";
++                speakText(textToRead);
++                navigateToPage(MainActivity7.class, textToRead);
++            }
++        });
++
++        lovingKindnessButton.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+-                startActivity(new Intent(MainActivity4.this, MainActivity5.class));
++                String textToRead = "Text for Loving-Kindness Meditation";
++                speakText(textToRead);
++                navigateToPage(MainActivity8.class, textToRead);
+             }
+         });
+ 
+-        bodyScan.setOnClickListener(new View.OnClickListener() {
++        mantraButton.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+-                startActivity(new Intent(MainActivity4.this, MainActivity6.class));
++                String textToRead = "Text for Mantra Meditation";
++                speakText(textToRead);
++                navigateToPage(MainActivity9.class, textToRead);
+             }
+         });
+ 
+-        mindfulWalking.setOnClickListener(new View.OnClickListener() {
++        soundButton.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+-                startActivity(new Intent(MainActivity4.this, MainActivity7.class));
++                String textToRead = "Text for Sound Meditation";
++                speakText(textToRead);
++                navigateToPage(MainActivity10.class, textToRead);
+             }
+         });
+     }
+-}
+\ No newline at end of file
++
++    private void speakText(String text) {
++        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
++    }
++
++    private void navigateToPage(Class<?> cls, String text) {
++        Intent intent = new Intent(MainActivity4.this, cls);
++        intent.putExtra("textToRead", text);
++        startActivity(intent);
++    }
++
++    @Override
++    protected void onDestroy() {
++        super.onDestroy();
++        if (textToSpeech != null) {
++            textToSpeech.stop();
++            textToSpeech.shutdown();
++        }
++    }
++}
+Index: app/src/main/res/layout/activity_main9.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main9.xml b/app/src/main/res/layout/activity_main9.xml
+new file mode 100644
+--- /dev/null	(date 1686748066800)
++++ b/app/src/main/res/layout/activity_main9.xml	(date 1686748066800)
+@@ -0,0 +1,94 @@
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:gravity="center"
++    android:padding="16dp"
++    tools:context=".MainActivity"
++    android:backgroundTint="@color/design_default_color_primary"
++    >
++
++    <TextView
++        android:id="@+id/stepbt"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="Here You can Learn Mantra Meditation.\nFollow The Steps Below:"
++        android:textSize="24sp"
++        android:textStyle="bold"
++        android:gravity="center"
++        android:layout_centerInParent="true"/>
++
++    <TextView
++        android:id="@+id/stepbt1"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/stepbt"
++        android:layout_marginTop="16dp"
++        android:text="Step 1: Find a quiet and comfortable space."
++        android:textSize="18sp"
++        android:gravity="center"
++        android:layout_centerHorizontal="true"/>
++
++    <TextView
++        android:id="@+id/stepbt2"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/stepbt1"
++        android:layout_marginTop="16dp"
++        android:text="Step 2: Sit in a comfortable posture with your back straight."
++        android:textSize="18sp"
++        android:gravity="center"
++        android:layout_centerHorizontal="true"/>
++
++    <TextView
++        android:id="@+id/stepbt3"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/stepbt2"
++        android:layout_marginTop="16dp"
++        android:text="Step 3: Choose a mantra or phrase that resonates with you."
++        android:textSize="18sp"
++        android:gravity="center"
++        android:layout_centerHorizontal="true"/>
++    <TextView
++        android:id="@+id/stepbt4"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/stepbt3"
++        android:layout_marginTop="16dp"
++        android:text="Step 4: Close your eyes and repeat the mantra silently or aloud."
++        android:textSize="18sp"
++        android:gravity="center"
++        android:layout_centerHorizontal="true"/>
++    <TextView
++        android:id="@+id/stepbt5"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/stepbt4"
++        android:layout_marginTop="16dp"
++        android:text="Step 5: Maintain focus on the mantra, letting go of distractions."
++        android:textSize="18sp"
++        android:gravity="center"
++        android:layout_centerHorizontal="true"/>
++
++
++    <Button
++        android:id="@+id/audioButton5"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/stepbt5"
++        android:text="Play Audio"
++        android:layout_marginTop="16dp"
++        android:layout_centerHorizontal="true"/>
++
++    <Button
++        android:id="@+id/backButton5"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/audioButton5"
++        android:text="Back"
++        android:layout_marginTop="16dp"
++        android:layout_centerHorizontal="true"/>
++
++</RelativeLayout>
+Index: app/src/main/java/com/bezarjmand/bemind/MainActivity7.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.bezarjmand.bemind;\n\n\nimport android.annotation.SuppressLint;\nimport android.os.Bundle;\nimport android.speech.tts.TextToSpeech;\nimport android.view.View;\nimport android.widget.Button;\nimport android.widget.Toast;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\nimport java.util.Locale;\n\npublic class MainActivity7 extends AppCompatActivity implements View.OnClickListener {\n\n    private TextToSpeech textToSpeech;\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_main7);\n\n        textToSpeech = new TextToSpeech(this, new TextToSpeech.OnInitListener() {\n            @Override\n            public void onInit(int status) {\n                if (status == TextToSpeech.SUCCESS) {\n                    textToSpeech.setLanguage(Locale.getDefault());\n                } else {\n                    Toast.makeText(MainActivity7.this, \"TextToSpeech initialization failed\", Toast.LENGTH_SHORT).show();\n                }\n            }\n        });\n\n        Button playButton = findViewById(R.id.audioButton3);\n        Button backButton = findViewById(R.id.backButton3);\n\n        playButton.setOnClickListener(this);\n        backButton.setOnClickListener(this);\n    }\n\n    @SuppressLint(\"NonConstantResourceId\")\n    @Override\n    public void onClick(View view) {\n        if (view.getId() == R.id.audioButton3) {\n            String text = \"Follow these steps to have the breathing exercise\";\n            speakText(text);\n        } else if (view.getId() == R.id.backButton3) {\n            finish();\n        }\n    }\n\n\n    private void speakText(String text) {\n        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);\n    }\n\n    @Override\n    protected void onDestroy() {\n        super.onDestroy();\n        if (textToSpeech != null) {\n            textToSpeech.stop();\n            textToSpeech.shutdown();\n        }\n    }\n}\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/bezarjmand/bemind/MainActivity7.java b/app/src/main/java/com/bezarjmand/bemind/MainActivity7.java
+--- a/app/src/main/java/com/bezarjmand/bemind/MainActivity7.java	(revision 2753436d9bce119bb43f7a3ccfda26047a56b89c)
++++ b/app/src/main/java/com/bezarjmand/bemind/MainActivity7.java	(date 1686756600100)
+@@ -1,6 +1,5 @@
+ package com.bezarjmand.bemind;
+ 
+-
+ import android.annotation.SuppressLint;
+ import android.os.Bundle;
+ import android.speech.tts.TextToSpeech;
+@@ -43,7 +42,7 @@
+     @Override
+     public void onClick(View view) {
+         if (view.getId() == R.id.audioButton3) {
+-            String text = "Follow these steps to have the breathing exercise";
++            String text = "Maryam joonam kheyli dooset daram hooraaaaaa";
+             speakText(text);
+         } else if (view.getId() == R.id.backButton3) {
+             finish();
+@@ -65,3 +64,6 @@
+     }
+ }
+ 
++
++
++
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+new file mode 100644
+--- /dev/null	(date 1686592693495)
++++ b/.idea/compiler.xml	(date 1686592693495)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CompilerConfiguration">
++    <bytecodeTargetLevel target="17" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"jbr-17\" project-jdk-type=\"JavaSDK\">\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 2753436d9bce119bb43f7a3ccfda26047a56b89c)
++++ b/.idea/misc.xml	(date 1686758532578)
+@@ -4,4 +4,7 @@
+   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+-</project>
+\ No newline at end of file
++=======
++  <component name="ExternalStorageConfigurationManager" enabled="true" />
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK" />
++  >>>>>>> origin/main
+Index: app/src/main/res/layout/activity_main4.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!-- activity_main.xml -->\n<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    android:gravity=\"center\"\n    android:background=\"@drawable/manifet_chill\">\n\n    <Button\n        android:id=\"@+id/BreathingExercises\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\"\n        android:text=\"Breathing Exercises\"\n        android:layout_centerInParent=\"true\" />\n\n    <Button\n        android:id=\"@+id/BodyScan\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\"\n        android:text=\"Body Scan\"\n        android:layout_below=\"@id/BreathingExercises\"\n        android:layout_marginTop=\"16dp\"\n        android:layout_centerHorizontal=\"true\" />\n\n    <Button\n        android:id=\"@+id/MindfulWalking\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"wrap_content\"\n        android:text=\"Mindful Walking\"\n        android:layout_below=\"@id/BodyScan\"\n        android:layout_marginTop=\"16dp\"\n        android:layout_centerHorizontal=\"true\" />\n\n</RelativeLayout>\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main4.xml b/app/src/main/res/layout/activity_main4.xml
+--- a/app/src/main/res/layout/activity_main4.xml	(revision 2753436d9bce119bb43f7a3ccfda26047a56b89c)
++++ b/app/src/main/res/layout/activity_main4.xml	(date 1686747877171)
+@@ -10,8 +10,8 @@
+         android:id="@+id/BreathingExercises"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:text="Breathing Exercises"
+-        android:layout_centerInParent="true" />
++        android:layout_centerInParent="true"
++        android:text="Breathing Exercises" />
+ 
+     <Button
+         android:id="@+id/BodyScan"
+@@ -30,6 +30,30 @@
+         android:layout_below="@id/BodyScan"
+         android:layout_marginTop="16dp"
+         android:layout_centerHorizontal="true" />
++    <Button
++        android:id="@+id/lovingandkindness"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="Loving-Kindness Meditation"
++        android:layout_below="@+id/MindfulWalking"
++        android:layout_marginTop="16dp"
++        android:layout_centerHorizontal="true" />
++    <Button
++        android:id="@+id/Mantra"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="Mantra Meditation"
++        android:layout_below="@+id/lovingandkindness"
++        android:layout_marginTop="16dp"
++        android:layout_centerHorizontal="true" />
++    <Button
++        android:id="@+id/Sound"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="Sound Meditation"
++        android:layout_below="@+id/Mantra"
++        android:layout_marginTop="16dp"
++        android:layout_centerHorizontal="true" />
+ 
+ </RelativeLayout>
+ 
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"GradleSettings\">\n    <option name=\"linkedExternalProjectsSettings\">\n      <GradleProjectSettings>\n        <option name=\"testRunner\" value=\"GRADLE\" />\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\n        <option name=\"gradleJvm\" value=\"jbr-17\" />\n        <option name=\"modules\">\n          <set>\n            <option value=\"$PROJECT_DIR$\" />\n            <option value=\"$PROJECT_DIR$/app\" />\n          </set>\n        </option>\n      </GradleProjectSettings>\n    </option>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+--- a/.idea/gradle.xml	(revision 2753436d9bce119bb43f7a3ccfda26047a56b89c)
++++ b/.idea/gradle.xml	(date 1686592845262)
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="GradleMigrationSettings" migrationVersion="1" />
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>
+Index: .idea/.name
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.name b/.idea/.name
+new file mode 100644
+--- /dev/null	(date 1686592693495)
++++ b/.idea/.name	(date 1686592693495)
+@@ -0,0 +1,1 @@
++BeMind
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_main8.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    tools:context=\".MainActivity7\">\n\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main8.xml b/app/src/main/res/layout/activity_main8.xml
+--- a/app/src/main/res/layout/activity_main8.xml	(revision 2753436d9bce119bb43f7a3ccfda26047a56b89c)
++++ b/app/src/main/res/layout/activity_main8.xml	(date 1686747304342)
+@@ -1,9 +1,94 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++
+     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+-    tools:context=".MainActivity7">
++    android:gravity="center"
++    android:padding="16dp"
++    tools:context=".MainActivity"
++    android:backgroundTint="@color/design_default_color_primary"
++    >
++
++    <TextView
++        android:id="@+id/stepbt"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="Here is Loving-Kindness Meditation.\nFollow The Steps Below:"
++        android:textSize="24sp"
++        android:textStyle="bold"
++        android:gravity="center"
++        android:layout_centerInParent="true"/>
++
++    <TextView
++        android:id="@+id/stepbt1"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/stepbt"
++        android:layout_marginTop="16dp"
++        android:text="Step 1: Find a comfortable position and close your eyes."
++        android:textSize="18sp"
++        android:gravity="center"
++        android:layout_centerHorizontal="true"/>
++
++    <TextView
++        android:id="@+id/stepbt2"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/stepbt1"
++        android:layout_marginTop="16dp"
++        android:text="Step 2: Generate loving-kindness towards yourself."
++        android:textSize="18sp"
++        android:gravity="center"
++        android:layout_centerHorizontal="true"/>
+ 
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
++    <TextView
++        android:id="@+id/stepbt3"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/stepbt2"
++        android:layout_marginTop="16dp"
++        android:text="Step 3: Extend loving-kindness towards a loved one."
++        android:textSize="18sp"
++        android:gravity="center"
++        android:layout_centerHorizontal="true"/>
++    <TextView
++        android:id="@+id/stepbt4"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/stepbt3"
++        android:layout_marginTop="16dp"
++        android:text="Step 4: Expand the circle of loving-kindness to include neutral and difficult people."
++        android:textSize="18sp"
++        android:gravity="center"
++        android:layout_centerHorizontal="true"/>
++    <TextView
++        android:id="@+id/stepbt5"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/stepbt4"
++        android:layout_marginTop="16dp"
++        android:text="Step 5: Sit in stillness, experiencing the warmth of loving-kindness."
++        android:textSize="18sp"
++        android:gravity="center"
++        android:layout_centerHorizontal="true"/>
++
++
++    <Button
++        android:id="@+id/audioButton4"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/stepbt5"
++        android:text="Play Audio"
++        android:layout_marginTop="16dp"
++        android:layout_centerHorizontal="true"/>
++
++    <Button
++        android:id="@+id/backButton4"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/audioButton4"
++        android:text="Back"
++        android:layout_marginTop="16dp"
++        android:layout_centerHorizontal="true"/>
++
++</RelativeLayout>
+Index: app/src/main/java/com/bezarjmand/bemind/MainActivity5.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.bezarjmand.bemind;\n\nimport android.annotation.SuppressLint;\nimport android.os.Bundle;\nimport android.speech.tts.TextToSpeech;\nimport android.view.View;\nimport android.widget.Button;\nimport android.widget.Toast;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\nimport java.util.Locale;\n\npublic class MainActivity5 extends AppCompatActivity implements View.OnClickListener {\n\n    private TextToSpeech textToSpeech;\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_main5);\n\n        textToSpeech = new TextToSpeech(this, new TextToSpeech.OnInitListener() {\n            @Override\n            public void onInit(int status) {\n                if (status == TextToSpeech.SUCCESS) {\n                    textToSpeech.setLanguage(Locale.getDefault());\n                } else {\n                    Toast.makeText(MainActivity5.this, \"TextToSpeech initialization failed\", Toast.LENGTH_SHORT).show();\n                }\n            }\n        });\n\n        Button playButton = findViewById(R.id.audioButton);\n        Button backButton = findViewById(R.id.backButton1);\n\n        playButton.setOnClickListener(this);\n        backButton.setOnClickListener(this);\n    }\n\n    @SuppressLint(\"NonConstantResourceId\")\n    @Override\n    public void onClick(View view) {\n        if (view.getId() == R.id.audioButton) {\n            String text = \"Follow these steps to have the breathing exercise\";\n            speakText(text);\n        } else if (view.getId() == R.id.backButton1) {\n            finish();\n        }\n    }\n\n\n    private void speakText(String text) {\n        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);\n    }\n\n    @Override\n    protected void onDestroy() {\n        super.onDestroy();\n        if (textToSpeech != null) {\n            textToSpeech.stop();\n            textToSpeech.shutdown();\n        }\n    }\n}\n\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/bezarjmand/bemind/MainActivity5.java b/app/src/main/java/com/bezarjmand/bemind/MainActivity5.java
+--- a/app/src/main/java/com/bezarjmand/bemind/MainActivity5.java	(revision 2753436d9bce119bb43f7a3ccfda26047a56b89c)
++++ b/app/src/main/java/com/bezarjmand/bemind/MainActivity5.java	(date 1686749133153)
+@@ -42,7 +42,7 @@
+     @Override
+     public void onClick(View view) {
+         if (view.getId() == R.id.audioButton) {
+-            String text = "Follow these steps to have the breathing exercise";
++            String text = "Maryam joonam kheyli dooset daram hooraaaaaa";
+             speakText(text);
+         } else if (view.getId() == R.id.backButton1) {
+             finish();
+Index: app/src/main/java/com/bezarjmand/bemind/MainActivity6.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.bezarjmand.bemind;\n\n\nimport android.annotation.SuppressLint;\nimport android.os.Bundle;\nimport android.speech.tts.TextToSpeech;\nimport android.view.View;\nimport android.widget.Button;\nimport android.widget.Toast;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\nimport java.util.Locale;\n\npublic class MainActivity6 extends AppCompatActivity implements View.OnClickListener {\n\n    private TextToSpeech textToSpeech;\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.activity_main6);\n\n        textToSpeech = new TextToSpeech(this, new TextToSpeech.OnInitListener() {\n            @Override\n            public void onInit(int status) {\n                if (status == TextToSpeech.SUCCESS) {\n                    textToSpeech.setLanguage(Locale.getDefault());\n                } else {\n                    Toast.makeText(MainActivity6.this, \"TextToSpeech initialization failed\", Toast.LENGTH_SHORT).show();\n                }\n            }\n        });\n\n        Button playButton = findViewById(R.id.audioButton2);\n        Button backButton = findViewById(R.id.backButton2);\n\n        playButton.setOnClickListener(this);\n        backButton.setOnClickListener(this);\n    }\n\n    @SuppressLint(\"NonConstantResourceId\")\n    @Override\n    public void onClick(View view) {\n        if (view.getId() == R.id.audioButton2) {\n            String text = \"Follow these steps to have the breathing exercise\";\n            speakText(text);\n        } else if (view.getId() == R.id.backButton2) {\n            finish();\n        }\n    }\n\n\n    private void speakText(String text) {\n        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);\n    }\n\n    @Override\n    protected void onDestroy() {\n        super.onDestroy();\n        if (textToSpeech != null) {\n            textToSpeech.stop();\n            textToSpeech.shutdown();\n        }\n    }\n}\n\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/bezarjmand/bemind/MainActivity6.java b/app/src/main/java/com/bezarjmand/bemind/MainActivity6.java
+--- a/app/src/main/java/com/bezarjmand/bemind/MainActivity6.java	(revision 2753436d9bce119bb43f7a3ccfda26047a56b89c)
++++ b/app/src/main/java/com/bezarjmand/bemind/MainActivity6.java	(date 1686756502845)
+@@ -1,6 +1,5 @@
+ package com.bezarjmand.bemind;
+ 
+-
+ import android.annotation.SuppressLint;
+ import android.os.Bundle;
+ import android.speech.tts.TextToSpeech;
+@@ -43,7 +42,7 @@
+     @Override
+     public void onClick(View view) {
+         if (view.getId() == R.id.audioButton2) {
+-            String text = "Follow these steps to have the breathing exercise";
++            String text = "Maryam joonam kheyli dooset daram hooraaaaaa";
+             speakText(text);
+         } else if (view.getId() == R.id.backButton2) {
+             finish();
+@@ -67,3 +66,4 @@
+ 
+ 
+ 
++
+Index: app/src/main/java/com/bezarjmand/bemind/MainActivity10.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/bezarjmand/bemind/MainActivity10.java b/app/src/main/java/com/bezarjmand/bemind/MainActivity10.java
+new file mode 100644
+--- /dev/null	(date 1686756823737)
++++ b/app/src/main/java/com/bezarjmand/bemind/MainActivity10.java	(date 1686756823737)
+@@ -0,0 +1,68 @@
++package com.bezarjmand.bemind;
++
++import android.annotation.SuppressLint;
++import android.os.Bundle;
++import android.speech.tts.TextToSpeech;
++import android.view.View;
++import android.widget.Button;
++import android.widget.Toast;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import java.util.Locale;
++
++public class MainActivity10 extends AppCompatActivity implements View.OnClickListener {
++
++    private TextToSpeech textToSpeech;
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_main10);
++
++        textToSpeech = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
++            @Override
++            public void onInit(int status) {
++                if (status == TextToSpeech.SUCCESS) {
++                    textToSpeech.setLanguage(Locale.getDefault());
++                } else {
++                    Toast.makeText(MainActivity10.this, "TextToSpeech initialization failed", Toast.LENGTH_SHORT).show();
++                }
++            }
++        });
++
++        Button playButton = findViewById(R.id.audioButton6);
++        Button backButton = findViewById(R.id.backButton6);
++
++        playButton.setOnClickListener(this);
++        backButton.setOnClickListener(this);
++    }
++
++    @SuppressLint("NonConstantResourceId")
++    @Override
++    public void onClick(View view) {
++        if (view.getId() == R.id.audioButton6) {
++            String text = "Maryam joonam kheyli dooset daram hooraaaaaa";
++            speakText(text);
++        } else if (view.getId() == R.id.backButton6) {
++            finish();
++        }
++    }
++
++
++    private void speakText(String text) {
++        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
++    }
++
++    @Override
++    protected void onDestroy() {
++        super.onDestroy();
++        if (textToSpeech != null) {
++            textToSpeech.stop();
++            textToSpeech.shutdown();
++        }
++    }
++}
++
++
++
+Index: app/src/main/res/layout/activity_main10.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_main10.xml b/app/src/main/res/layout/activity_main10.xml
+new file mode 100644
+--- /dev/null	(date 1686748427540)
++++ b/app/src/main/res/layout/activity_main10.xml	(date 1686748427540)
+@@ -0,0 +1,94 @@
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:gravity="center"
++    android:padding="16dp"
++    tools:context=".MainActivity"
++    android:backgroundTint="@color/design_default_color_primary"
++    >
++
++    <TextView
++        android:id="@+id/stepbt"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="You can learn Sound Meditation Practice.\nFollow The Steps Below:"
++        android:textSize="24sp"
++        android:textStyle="bold"
++        android:gravity="center"
++        android:layout_centerInParent="true"/>
++
++    <TextView
++        android:id="@+id/stepbt1"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/stepbt"
++        android:layout_marginTop="16dp"
++        android:text="Step 1: Find a quiet and comfortable space."
++        android:textSize="18sp"
++        android:gravity="center"
++        android:layout_centerHorizontal="true"/>
++
++    <TextView
++        android:id="@+id/stepbt2"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/stepbt1"
++        android:layout_marginTop="16dp"
++        android:text="Step 2: Choose a calming sound or music to listen to."
++        android:textSize="18sp"
++        android:gravity="center"
++        android:layout_centerHorizontal="true"/>
++
++    <TextView
++        android:id="@+id/stepbt3"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/stepbt2"
++        android:layout_marginTop="16dp"
++        android:text="Step 3: Sit in a comfortable posture with your back straight."
++        android:textSize="18sp"
++        android:gravity="center"
++        android:layout_centerHorizontal="true"/>
++    <TextView
++        android:id="@+id/stepbt4"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/stepbt3"
++        android:layout_marginTop="16dp"
++        android:text="Step 4: Close your eyes and focus your attention on the sound."
++        android:textSize="18sp"
++        android:gravity="center"
++        android:layout_centerHorizontal="true"/>
++    <TextView
++        android:id="@+id/stepbt5"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/stepbt4"
++        android:layout_marginTop="16dp"
++        android:text="Step 5: Allow the sound to guide your attention and bring a sense of relaxation and tranquility."
++        android:textSize="18sp"
++        android:gravity="center"
++        android:layout_centerHorizontal="true"/>
++
++
++    <Button
++        android:id="@+id/audioButton6"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/stepbt5"
++        android:text="Play Audio"
++        android:layout_marginTop="16dp"
++        android:layout_centerHorizontal="true"/>
++
++    <Button
++        android:id="@+id/backButton6"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/audioButton6"
++        android:text="Back"
++        android:layout_marginTop="16dp"
++        android:layout_centerHorizontal="true"/>
++
++</RelativeLayout>
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:tools=\"http://schemas.android.com/tools\">\n\n    <application\n        android:allowBackup=\"true\"\n        android:dataExtractionRules=\"@xml/data_extraction_rules\"\n        android:fullBackupContent=\"@xml/backup_rules\"\n        android:icon=\"@mipmap/ic_launcher\"\n        android:label=\"@string/app_name\"\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\n        android:supportsRtl=\"true\"\n        android:theme=\"@style/Theme.BeMind\"\n        tools:targetApi=\"31\">\n\n        <activity android:name=\".ViewHistory\" />\n        <activity\n            android:name=\".MainActivity7\"\n            android:exported=\"false\" />\n        <activity\n            android:name=\".MainActivity6\"\n            android:exported=\"false\" />\n        <activity\n            android:name=\".MainActivity5\"\n            android:exported=\"false\" />\n        <activity\n            android:name=\".MainActivity4\"\n            android:exported=\"false\" />\n        <activity\n            android:name=\".MainActivity3\"\n            android:exported=\"false\" />\n        <activity\n            android:name=\".MainActivity2\"\n            android:exported=\"false\" />\n        <activity\n            android:name=\".MainActivity\"\n            android:exported=\"true\">\n            <intent-filter>\n                <action android:name=\"android.intent.action.MAIN\" />\n                <category android:name=\"android.intent.category.LAUNCHER\" />\n            </intent-filter>\n        </activity>\n    </application>\n\n</manifest>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision 2753436d9bce119bb43f7a3ccfda26047a56b89c)
++++ b/app/src/main/AndroidManifest.xml	(date 1686747765932)
+@@ -1,3 +1,4 @@
++<?xml version="1.0" encoding="utf-8"?>
+ <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools">
+ 
+@@ -11,7 +12,15 @@
+         android:supportsRtl="true"
+         android:theme="@style/Theme.BeMind"
+         tools:targetApi="31">
+-
++        <activity
++            android:name=".MainActivity10"
++            android:exported="false" />
++        <activity
++            android:name=".MainActivity9"
++            android:exported="false" />
++        <activity
++            android:name=".MainActivity8"
++            android:exported="false" />
+         <activity android:name=".ViewHistory" />
+         <activity
+             android:name=".MainActivity7"
+@@ -36,9 +45,10 @@
+             android:exported="true">
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
++
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+         </activity>
+     </application>
+ 
+-</manifest>
++</manifest>
+\ No newline at end of file
+Index: app/src/main/java/com/bezarjmand/bemind/MainActivity9.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/bezarjmand/bemind/MainActivity9.java b/app/src/main/java/com/bezarjmand/bemind/MainActivity9.java
+new file mode 100644
+--- /dev/null	(date 1686756823714)
++++ b/app/src/main/java/com/bezarjmand/bemind/MainActivity9.java	(date 1686756823714)
+@@ -0,0 +1,68 @@
++package com.bezarjmand.bemind;
++
++import android.annotation.SuppressLint;
++import android.os.Bundle;
++import android.speech.tts.TextToSpeech;
++import android.view.View;
++import android.widget.Button;
++import android.widget.Toast;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import java.util.Locale;
++
++public class MainActivity9 extends AppCompatActivity implements View.OnClickListener {
++
++    private TextToSpeech textToSpeech;
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_main9);
++
++        textToSpeech = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
++            @Override
++            public void onInit(int status) {
++                if (status == TextToSpeech.SUCCESS) {
++                    textToSpeech.setLanguage(Locale.getDefault());
++                } else {
++                    Toast.makeText(MainActivity9.this, "TextToSpeech initialization failed", Toast.LENGTH_SHORT).show();
++                }
++            }
++        });
++
++        Button playButton = findViewById(R.id.audioButton5);
++        Button backButton = findViewById(R.id.backButton5);
++
++        playButton.setOnClickListener(this);
++        backButton.setOnClickListener(this);
++    }
++
++    @SuppressLint("NonConstantResourceId")
++    @Override
++    public void onClick(View view) {
++        if (view.getId() == R.id.audioButton5) {
++            String text = "Maryam joonam kheyli dooset daram hooraaaaaa";
++            speakText(text);
++        } else if (view.getId() == R.id.backButton5) {
++            finish();
++        }
++    }
++
++
++    private void speakText(String text) {
++        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
++    }
++
++    @Override
++    protected void onDestroy() {
++        super.onDestroy();
++        if (textToSpeech != null) {
++            textToSpeech.stop();
++            textToSpeech.shutdown();
++        }
++    }
++}
++
++
++

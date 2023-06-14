@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="16dp"
+    tools:context=".MainActivity"
+    android:backgroundTint="@color/design_default_color_primary"
+    >
+
+    <TextView
+        android:id="@+id/stepbt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Here is Mantra Meditation\nFollow The Steps Below:"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/stepbt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stepbt"
+        android:layout_marginTop="16dp"
+        android:text="Step 1: Find a quiet and comfortable space."
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/stepbt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stepbt1"
+        android:layout_marginTop="16dp"
+        android:text="Step 2: Choose a mantra that resonates with you."
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/stepbt3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stepbt2"
+        android:layout_marginTop="16dp"
+        android:text="Step 3: Close your eyes and take a few deep breaths to relax."
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:id="@+id/stepbt4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stepbt3"
+        android:layout_marginTop="16dp"
+        android:text="Step 4: Repeat the mantra silently or aloud, focusing your attention on the sound and vibration."
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:id="@+id/stepbt5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stepbt4"
+        android:layout_marginTop="16dp"
+        android:text="Step 5: Continue the practice for a few minutes, bringing your mind back to the mantra whenever it wanders."
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"/>
+
+
+    <Button
+        android:id="@+id/audioButton5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stepbt5"
+        android:text="Play Audio"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/backButton5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/audioButton5"
+        android:text="Back"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

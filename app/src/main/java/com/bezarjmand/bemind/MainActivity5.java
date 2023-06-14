@@ -42,7 +42,7 @@ public class MainActivity5 extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.audioButton1) {
-            String text = "Follow these steps to have the breathing exercise";
+            String text = "Find a comfortable position and close your eyes. Take a deep breath in through your nose, allowing your abdomen to rise as you fill your lungs with air. Slowly exhale through your mouth, releasing any tension or stress with each breath out. Continue this deep breathing pattern, focusing on the sensation of your breath and letting go of any distracting thoughts. Practice this exercise regularly to promote relaxation and mindfulness.";
             speakText(text);
         } else if (view.getId() == R.id.backButton1) {
             finish();

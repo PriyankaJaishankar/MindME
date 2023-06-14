@@ -43,7 +43,7 @@ public class MainActivity6 extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.audioButton2) {
-            String text = "Follow these steps to have the breathing exercise";
+            String text = "Find a comfortable position and close your eyes. Bring your attention to different parts of your body, starting from your toes and moving all the way up to the top of your head. Notice any sensations or areas of tension as you scan each body part. Take a moment to relax and release any tension you may be holding. Continue this process, gradually scanning and relaxing each part of your body. This practice helps you cultivate awareness of your body and promotes relaxation and a sense of grounding. Practice regularly to enhance your mind-body connection and overall well-being.";
             speakText(text);
         } else if (view.getId() == R.id.backButton2) {
             finish();

@@ -43,7 +43,7 @@ public class MainActivity7 extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.audioButton3) {
-            String text = "Follow these steps to have the breathing exercise";
+            String text = "Engage in mindful walking by taking each step with awareness and presence. As you walk, pay attention to the sensation of your feet touching the ground. Notice the movement of your body and the rhythm of your steps. Be fully present in the experience of walking, observing the sights, sounds, and sensations around you. If your mind starts to wander, gently bring your focus back to the act of walking. This practice can help you cultivate a sense of grounding, enhance your connection with the present moment, and bring a greater sense of mindfulness into your daily activities.";
             speakText(text);
         } else if (view.getId() == R.id.backButton3) {
             finish();

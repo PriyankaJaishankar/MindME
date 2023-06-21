@@ -67,40 +67,40 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
                 // Display the corresponding message for the selected mood
                 switch (selectedMood) {
                     case "Glücklich\uD83D\uDE04":
-                        moodInfoTextView.setText("Happiness is a choice, so choose to be happy!");
+                        moodInfoTextView.setText("Glück ist eine Entscheidung, also entscheide dich, glücklich zu sein!");
                         break;
                     case "Traurig\uD83D\uDE22":
-                        moodInfoTextView.setText("Every storm eventually runs out of rain!");
+                        moodInfoTextView.setText("Jedem Sturm geht irgendwann der Regen aus!");
                         break;
                     case "Normal\uD83D\uDE10":
-                        moodInfoTextView.setText("Embrace the ordinary moments, for they make up the fabric of life!");
+                        moodInfoTextView.setText("Nehmen Sie die gewöhnlichen Momente an, denn sie machen das Leben aus!");
                         break;
                     case "Zufrieden\uD83D\uDE0A":
-                        moodInfoTextView.setText("Satisfaction is the stepping stone to contentment!");
+                        moodInfoTextView.setText("Zufriedenheit ist das Sprungbrett zur Zufriedenheit!");
                         break;
                     case "Ruhig\uD83D\uDE0C":
-                        moodInfoTextView.setText("Find calmness within yourself amidst the chaos!");
+                        moodInfoTextView.setText("Finden Sie inmitten des Chaos die Ruhe in sich selbst!");
                         break;
                     case "Frustriert\uD83D\uDE20":
-                        moodInfoTextView.setText("Take a deep breath, step back, and find a new perspective!");
+                        moodInfoTextView.setText("Atmen Sie tief durch, treten Sie zurück und finden Sie eine neue Perspektive!");
                         break;
                     case "Ängstlich\uD83D\uDE1F":
-                        moodInfoTextView.setText("Acknowledge your anxiety and take small steps towards managing it!");
+                        moodInfoTextView.setText("Erkennen Sie Ihre Ängste an und unternehmen Sie kleine Schritte, um sie zu bewältigen!");
                         break;
                     case "Wütend\uD83D\uDE21":
-                        moodInfoTextView.setText("Anger is temporary; let it pass and choose peace!");
+                        moodInfoTextView.setText("Zorn ist nur vorübergehend; lass ihn vorübergehen und wähle den Frieden!");
                         break;
                     case "Einsam\uD83D\uDE14":
-                        moodInfoTextView.setText("Reach out to loved ones and build connections!");
+                        moodInfoTextView.setText("Gehen Sie auf Ihre Lieben zu und bauen Sie Verbindungen auf!");
                         break;
                     case "Müde\uD83D\uDE2B":
                         moodInfoTextView.setText("Rest, rejuvenate, and bounce back stronger!");
                         break;
                     case "Langweilig\uD83D\uDE12":
-                        moodInfoTextView.setText("Discover new hobbies and ignite your curiosity!");
+                        moodInfoTextView.setText("Ruhen Sie sich aus, verjüngen Sie sich und kommen Sie gestärkt zurück!");
                         break;
                     case "Schläfrig\uD83D\uDE34":
-                        moodInfoTextView.setText("Get some quality sleep and wake up refreshed!");
+                        moodInfoTextView.setText("Gönnen Sie sich einen guten Schlaf und wachen Sie erfrischt auf!");
                         break;
                     default:
                         moodInfoTextView.setText("");

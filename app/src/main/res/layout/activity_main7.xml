@@ -5,8 +5,9 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:padding="16dp"
+    android:background="#E1D3BA"
     tools:context=".MainActivity"
-    android:backgroundTint="@color/design_default_color_primary"
+
     >
 
     <TextView

@@ -29,6 +29,7 @@ android {
 }
 repositories {
     //maven { url 'https://jitpack.io' }
+
 }
 
 dependencies {
@@ -42,9 +43,12 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation 'androidx.room:room-runtime:2.5.1'
     annotationProcessor 'androidx.room:room-compiler:2.5.1'
-    //implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     implementation 'com.github.pires:obd-java-api:1.0'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+
+
 
 
 

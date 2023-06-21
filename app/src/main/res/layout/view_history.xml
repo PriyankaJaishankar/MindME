@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:paddingBottom="8dp"
-        android:text="Mood History"
+        android:text="Stimmungsgeschichte"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
 
@@ -175,21 +175,21 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|center_horizontal"
                 android:layout_marginTop="8dp"
-                android:text="Further" />
+                android:text="Weiter" />
 
             <Button
                 android:id="@+id/backToMoodSelectionButton"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|center_horizontal"
-                android:text="Back" />
+                android:text="Zurück" />
 
             <Button
                 android:id="@+id/clearHistoryButton"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|center_horizontal"
-                android:text="Clear History" />
+                android:text="Verlauf löschen" />
 
         </LinearLayout>
 

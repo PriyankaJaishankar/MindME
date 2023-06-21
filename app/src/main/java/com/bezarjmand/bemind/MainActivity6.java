@@ -43,7 +43,7 @@ public class MainActivity6 extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.audioButton2) {
-            String text = "Find a comfortable position and close your eyes. Bring your attention to different parts of your body, starting from your toes and moving all the way up to the top of your head. Notice any sensations or areas of tension as you scan each body part. Take a moment to relax and release any tension you may be holding. Continue this process, gradually scanning and relaxing each part of your body. This practice helps you cultivate awareness of your body and promotes relaxation and a sense of grounding. Practice regularly to enhance your mind-body connection and overall well-being.";
+            String text = "Finden Sie eine bequeme Position und schließen Sie die Augen. Richten Sie Ihre Aufmerksamkeit auf verschiedene Teile Ihres Körpers, angefangen bei den Zehen bis hin zum Scheitel Ihres Kopfes. Beachten Sie alle Empfindungen oder Spannungsbereiche, während Sie jeden Körperteil scannen. Nehmen Sie sich einen Moment Zeit, um sich zu entspannen und eventuelle Spannungen abzubauen. Setzen Sie diesen Vorgang fort, indem Sie nach und nach jeden Teil Ihres Körpers scannen und entspannen. Diese Praxis hilft Ihnen, das Bewusstsein für Ihren Körper zu schärfen und fördert Entspannung und ein Gefühl der Erdung. Üben Sie regelmäßig, um Ihre Geist-Körper-Verbindung und Ihr allgemeines Wohlbefinden zu verbessern.";
             speakText(text);
         } else if (view.getId() == R.id.backButton2) {
             finish();

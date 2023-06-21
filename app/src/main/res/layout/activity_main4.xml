@@ -10,14 +10,14 @@
         android:id="@+id/BreathingExercises"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Breathing Exercises"
+        android:text="AtmenÜbung"
         android:layout_centerInParent="true" />
 
     <Button
         android:id="@+id/BodyScan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Body Scan"
+        android:text="Körperscan"
         android:layout_below="@id/BreathingExercises"
         android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true" />
@@ -26,7 +26,7 @@
         android:id="@+id/MindfulWalking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mindful Walking"
+        android:text="Achtsames Spazieren"
         android:layout_below="@id/BodyScan"
         android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true" />
@@ -34,7 +34,7 @@
         android:id="@+id/love"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Loving-Kindness Meditation"
+        android:text="Liebes- und Freundlichkeitsmeditation"
         android:layout_below="@id/MindfulWalking"
         android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true" />
@@ -46,15 +46,14 @@
         android:layout_below="@id/love"
         android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true" />
-
     <Button
         android:id="@+id/sound"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Klang Meditaiton"
         android:layout_below="@id/Mantra"
-        android:layout_marginTop="37dp"
-        android:text="Sound Meditation"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
 

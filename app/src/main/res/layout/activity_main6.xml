@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt5"
         android:text="Play Audio"
-        android:layout_marginTop="16dp"
+        android:layout_margin="32dp"
         android:layout_centerHorizontal="true"/>
 
     <Button
@@ -89,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/audioButton2"
         android:text="Back"
-        android:layout_marginTop="16dp"
+        android:layout_margin="24dp"
         android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

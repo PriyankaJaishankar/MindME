@@ -80,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt5"
         android:text="Audio Abspielen"
-        android:layout_marginTop="16dp"
+        android:layout_margin="32dp"
         android:layout_centerHorizontal="true"/>
 
     <Button
@@ -89,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/audioButton5"
         android:text="Züruck"
-        android:layout_marginTop="16dp"
+        android:layout_margin="16dp"
         android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

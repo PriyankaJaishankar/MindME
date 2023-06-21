@@ -13,7 +13,7 @@
         android:id="@+id/stepbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Here IS Breathing Exercises\nFollow The Steps Below:"
+        android:text="Hier sind Atemübungen\nBefolgen Sie den folgenden Schritt:"
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt"
         android:layout_marginTop="16dp"
-        android:text="Step 1: Find a comfortable position and relax your body."
+        android:text="Step 1: Finden Sie eine bequeme Position und entspannen Sie Ihren Körper."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt1"
         android:layout_marginTop="16dp"
-        android:text="Step 2: Inhale deeply through your nose, filling your lungs with air."
+        android:text="Step 2: Atmen Sie tief durch die Nase ein und füllen Sie Ihre Lungen mit Luft."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt2"
         android:layout_marginTop="16dp"
-        android:text="Step 3: Exhale slowly through your mouth, releasing any tension or stress."
+        android:text="Step 3: Atmen Sie langsam durch den Mund aus und lösen Sie dabei jegliche Anspannung oder Stress."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt3"
         android:layout_marginTop="16dp"
-        android:text="Step 4: Count your breaths to help maintain a steady rhythm."
+        android:text="Step 4: Zählen Sie Ihre Atemzüge, um einen gleichmäßigen Rhythmus aufrechtzuerhalten."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt4"
         android:layout_marginTop="16dp"
-        android:text="Step 5:Stay present and bring your attention to the sensations of each breath."
+        android:text="Step 5:Bleiben Sie präsent und richten Sie Ihre Aufmerksamkeit auf die Empfindungen jedes Atemzugs."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -80,14 +80,14 @@
         android:layout_below="@id/stepbt5"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
-        android:text="Play Audio" />
+        android:text="Audio abspielen" />
 
     <Button
         android:id="@+id/backButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/audioButton1"
-        android:text="Back"
+        android:text="Zurück"
         android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true"/>
 

@@ -13,7 +13,7 @@
         android:id="@+id/stepbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Here is Walking Meditation.\nFollow The Steps Below:"
+        android:text="Hier ist Gehmeditation.\nFolgen Sie den unteren Schritten:"
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt"
         android:layout_marginTop="16dp"
-        android:text="Step 1: Find a suitable location."
+        android:text="Step 1: Finden Sie einen geeigneten Standort."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt1"
         android:layout_marginTop="16dp"
-        android:text="Step 2: Stand mindfully and become aware of your body."
+        android:text="Step 2: Stehen Sie achtsam und werden Sie sich Ihres Körpers bewusst."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt2"
         android:layout_marginTop="16dp"
-        android:text="Step 3: Walk slowly and deliberately, focusing on the sensations in your feet and legs."
+        android:text="Step 3: Gehen Sie langsam und bewusst und konzentrieren Sie sich dabei auf die Empfindungen in Ihren Füßen und Beinen."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt3"
         android:layout_marginTop="16dp"
-        android:text="Step 4: Stay present, gently bringing your attention back if it wanders."
+        android:text="Step 4: Bleiben Sie präsent und lenken Sie Ihre Aufmerksamkeit sanft zurück, wenn sie abschweift."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt4"
         android:layout_marginTop="16dp"
-        android:text="Step 5: Observe your surroundings without judgment."
+        android:text="Step 5: Beobachten Sie Ihre Umgebung ohne Urteil."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -78,7 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt5"
-        android:text="Play Audio"
+        android:text="Audio abspielen"
         android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"/>
 
@@ -87,7 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/audioButton3"
-        android:text="Back"
+        android:text="Zurück"
         android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true"/>
 

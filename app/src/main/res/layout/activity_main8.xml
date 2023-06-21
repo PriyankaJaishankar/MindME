@@ -13,7 +13,7 @@
         android:id="@+id/stepbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Here is Loving Kindness Meditation\nFollow The Steps Below:"
+        android:text="Hier ist Loving Kindness Meditation\nFolgen Sie den unteren Schritten:"
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt"
         android:layout_marginTop="16dp"
-        android:text="Step 1: Find a comfortable position and close your eyes."
+        android:text="Step 1: Finden Sie eine bequeme Position und schließen Sie die Augen."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt1"
         android:layout_marginTop="16dp"
-        android:text="Step 2: Generate loving-kindness towards yourself."
+        android:text="Step 2: Entwickeln Sie liebevolle Güte sich selbst gegenüber."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt2"
         android:layout_marginTop="16dp"
-        android:text="Step 3: Extend loving-kindness towards a loved one."
+        android:text="Step 3: Erweisen Sie einem geliebten Menschen Liebe und Güte."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt3"
         android:layout_marginTop="16dp"
-        android:text="Step 4: Expand the circle of loving-kindness to include neutral and difficult people."
+        android:text="Step 4: Erweitern Sie den Kreis der liebevollen Güte, um neutrale und schwierige Menschen einzubeziehen."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt4"
         android:layout_marginTop="16dp"
-        android:text="Step 5: Sit in stillness, experiencing the warmth of loving-kindness."
+        android:text="Step 5: Sitzen Sie in Stille und erleben Sie die Wärme liebevoller Güte."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -78,7 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt5"
-        android:text="Play Audio"
+        android:text="Audio Abspielen"
         android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true"/>
 
@@ -87,7 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/audioButton4"
-        android:text="Back"
+        android:text="Züruck"
         android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true"/>
 

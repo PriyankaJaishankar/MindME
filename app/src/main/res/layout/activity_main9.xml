@@ -14,7 +14,7 @@
         android:id="@+id/stepbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Here is Mantra Meditation\nFollow The Steps Below:"
+        android:text="Hier ist Mantra Meditation\nFolgen Sie den unteren Schritten:"
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt"
         android:layout_marginTop="16dp"
-        android:text="Step 1: Find a quiet and comfortable space."
+        android:text="Step 1: Finden Sie einen ruhigen und komfortablen Ort."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt1"
         android:layout_marginTop="16dp"
-        android:text="Step 2: Choose a mantra that resonates with you."
+        android:text="Step 2: Wählen Sie ein Mantra, das Sie anspricht."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt2"
         android:layout_marginTop="16dp"
-        android:text="Step 3: Close your eyes and take a few deep breaths to relax."
+        android:text="Step 3: Schließen Sie die Augen und atmen Sie ein paar Mal tief durch, um sich zu entspannen."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt3"
         android:layout_marginTop="16dp"
-        android:text="Step 4: Repeat the mantra silently or aloud, focusing your attention on the sound and vibration."
+        android:text="Step 4: Wiederholen Sie das Mantra leise oder laut und richten Sie dabei Ihre Aufmerksamkeit auf den Klang und die Vibration."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt4"
         android:layout_marginTop="16dp"
-        android:text="Step 5: Continue the practice for a few minutes, bringing your mind back to the mantra whenever it wanders."
+        android:text="Step 5: Setzen Sie die Übung einige Minuten lang fort und bringen Sie Ihre Gedanken immer dann zum Mantra zurück, wenn sie abschweifen."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -79,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt5"
-        android:text="Play Audio"
+        android:text="Audio Abspielen"
         android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true"/>
 
@@ -88,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/audioButton5"
-        android:text="Back"
+        android:text="Züruck"
         android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true"/>
 

@@ -94,7 +94,7 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
                         moodInfoTextView.setText("Gehen Sie auf Ihre Lieben zu und bauen Sie Verbindungen auf!");
                         break;
                     case "Müde\uD83D\uDE2B":
-                        moodInfoTextView.setText("Rest, rejuvenate, and bounce back stronger!");
+                        moodInfoTextView.setText("Ausruhen, verjüngen und gestärkt wieder auf die Beine kommen!");
                         break;
                     case "Langweilig\uD83D\uDE12":
                         moodInfoTextView.setText("Ruhen Sie sich aus, verjüngen Sie sich und kommen Sie gestärkt zurück!");

@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt"
         android:layout_marginTop="16dp"
-        android:text="Step 1: Finden Sie eine bequeme Position und schließen Sie die Augen."
+        android:text="Schritt 1: Finden Sie eine bequeme Position und schließen Sie die Augen."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt1"
         android:layout_marginTop="16dp"
-        android:text="Step 2: Entwickeln Sie liebevolle Güte sich selbst gegenüber."
+        android:text="Schritt 2: Entwickeln Sie liebevolle Güte sich selbst gegenüber."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt2"
         android:layout_marginTop="16dp"
-        android:text="Step 3: Erweisen Sie einem geliebten Menschen Liebe und Güte."
+        android:text="Schritt 3: Erweisen Sie einem geliebten Menschen Liebe und Güte."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt3"
         android:layout_marginTop="16dp"
-        android:text="Step 4: Erweitern Sie den Kreis der liebevollen Güte, um neutrale und schwierige Menschen einzubeziehen."
+        android:text="Schritt 4: Erweitern Sie den Kreis der liebevollen Güte, um neutrale und schwierige Menschen einzubeziehen."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt4"
         android:layout_marginTop="16dp"
-        android:text="Step 5: Sitzen Sie in Stille und erleben Sie die Wärme liebevoller Güte."
+        android:text="Schritt 5: Sitzen Sie in Stille und erleben Sie die Wärme liebevoller Güte."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>

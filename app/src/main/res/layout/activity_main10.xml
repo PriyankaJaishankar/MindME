@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt"
         android:layout_marginTop="16dp"
-        android:text="Step 1: Suchen Sie sich einen ruhigen Ort."
+        android:text="Schritt 1: Suchen Sie sich einen ruhigen Ort."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt1"
         android:layout_marginTop="16dp"
-        android:text="Step 2: Wählen Sie einen beruhigenden Klang oder ein beruhigendes Instrument."
+        android:text="Schritt 2: Wählen Sie einen beruhigenden Klang oder ein beruhigendes Instrument."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt2"
         android:layout_marginTop="16dp"
-        android:text="Step 3: Machen Sie es sich bequem im Sitzen oder Liegen."
+        android:text="Schritt 3: Machen Sie es sich bequem im Sitzen oder Liegen."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt3"
         android:layout_marginTop="16dp"
-        android:text="Step 4: Schließen Sie die Augen und konzentrieren Sie sich auf das Geräusch."
+        android:text="Schritt 4: Schließen Sie die Augen und konzentrieren Sie sich auf das Geräusch."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt4"
         android:layout_marginTop="16dp"
-        android:text="Step 5: Atmen Sie tief ein und lassen Sie sich beim Meditieren vom Klang leiten."
+        android:text="Schritt 5: Atmen Sie tief ein und lassen Sie sich beim Meditieren vom Klang leiten."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>

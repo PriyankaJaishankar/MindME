@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt"
         android:layout_marginTop="16dp"
-        android:text="Step 1: Machen Sie es sich bequem und schließen Sie die Augen."
+        android:text="Schritt 1: Machen Sie es sich bequem und schließen Sie die Augen."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt1"
         android:layout_marginTop="16dp"
-        android:text="Step 2: Scannen Sie Ihren Körper und nehmen Sie die Empfindungen in jedem Teil wahr."
+        android:text="Schritt 2: Scannen Sie Ihren Körper und nehmen Sie die Empfindungen in jedem Teil wahr."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt2"
         android:layout_marginTop="16dp"
-        android:text="Step 3: Atmen Sie in die Anspannung ein."
+        android:text="Schritt 3: Atmen Sie in die Anspannung ein."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt3"
         android:layout_marginTop="16dp"
-        android:text="Step 4: Bleiben Sie präsent und nicht wertend."
+        android:text="Schritt 4: Bleiben Sie präsent und nicht wertend."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt4"
         android:layout_marginTop="16dp"
-        android:text="Step 5: Beenden Sie die Übung, indem Sie sich auf Ihren Atem konzentrieren."
+        android:text="Schritt 5: Beenden Sie die Übung, indem Sie sich auf Ihren Atem konzentrieren."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -79,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt5"
-        android:text="Play Audio"
+        android:text="Audio abspielen"
         android:layout_margin="32dp"
         android:layout_centerHorizontal="true"/>
 
@@ -88,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/audioButton2"
-        android:text="Back"
+        android:text="Zurück"
         android:layout_margin="24dp"
         android:layout_centerHorizontal="true"/>
 

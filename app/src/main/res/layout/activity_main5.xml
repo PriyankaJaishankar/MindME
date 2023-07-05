@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -6,6 +6,7 @@
     android:gravity="center"
     android:padding="16dp"
     tools:context=".MainActivity"
+    android:orientation="vertical"
     android:background="#E1D3BA"
     >
 
@@ -72,23 +73,36 @@
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
 
-
-    <Button
-        android:id="@+id/audioButton1"
-        android:layout_width="127dp"
-        android:layout_height="79dp"
-        android:layout_below="@id/stepbt5"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
-        android:text="Audio abspielen" />
-
-    <Button
-        android:id="@+id/backButton1"
+    <GridLayout
+        android:id="@+id/moodGridLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/audioButton1"
-        android:text="Zurück"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_gravity="center"
+        android:alignmentMode="alignMargins"
+        android:columnCount="2"
+        android:columnOrderPreserved="false"
+        android:layout_margin="10dp"
+        android:rowCount="1">
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/audioButton1"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:layout_below="@id/stepbt5"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:text="Audio abspielen" />
+
+        <Button
+            android:id="@+id/backButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/audioButton1"
+            android:text="Zurück"
+            android:layout_margin="10dp"
+            android:layout_centerHorizontal="true"/>
+    </GridLayout>
+
+
+
+</LinearLayout>

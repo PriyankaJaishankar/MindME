@@ -5,16 +5,15 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:padding="16dp"
-    android:background="#E1D3BA"
     tools:context=".MainActivity"
-
+    android:backgroundTint="@color/design_default_color_primary"
     >
 
     <TextView
         android:id="@+id/stepbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hier sind Atemübungen\nBefolgen Sie den folgenden Schritt:"
+        android:text="Hier ist Atemübungen\nFolgen Sie den unten stehenden Schritten:"
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -26,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt"
         android:layout_marginTop="16dp"
-        android:text="Step 1: Finden Sie eine bequeme Position und entspannen Sie Ihren Körper."
+        android:text="Schritt 1: Suchen Sie sich eine bequeme Position und entspannen Sie Ihren Körper."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -37,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt1"
         android:layout_marginTop="16dp"
-        android:text="Step 2: Atmen Sie tief durch die Nase ein und füllen Sie Ihre Lungen mit Luft."
+        android:text="Schritt 2: Atmen Sie tief durch die Nase ein und füllen Sie Ihre Lungen mit Luft."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -48,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt2"
         android:layout_marginTop="16dp"
-        android:text="Step 3: Atmen Sie langsam durch den Mund aus und lösen Sie dabei jegliche Anspannung oder Stress."
+        android:text="Schritt 3: Atmen Sie langsam durch den Mund aus und lassen Sie dabei jegliche Anspannung oder Stress los."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -58,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt3"
         android:layout_marginTop="16dp"
-        android:text="Step 4: Zählen Sie Ihre Atemzüge, um einen gleichmäßigen Rhythmus aufrechtzuerhalten."
+        android:text="Schritt 4: Zählen Sie Ihre Atemzüge, um einen gleichmäßigen Rhythmus beizubehalten."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -68,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt4"
         android:layout_marginTop="16dp"
-        android:text="Step 5:Bleiben Sie präsent und richten Sie Ihre Aufmerksamkeit auf die Empfindungen jedes Atemzugs."
+        android:text="Schritt 5: Bleiben Sie präsent und lenken Sie Ihre Aufmerksamkeit auf die Empfindungen jedes Atems."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -76,11 +75,11 @@
 
     <Button
         android:id="@+id/audioButton1"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="127dp"
+        android:layout_height="79dp"
         android:layout_below="@id/stepbt5"
         android:layout_centerHorizontal="true"
-        android:layout_margin="32dp"
+        android:layout_marginTop="35dp"
         android:text="Audio abspielen" />
 
     <Button
@@ -89,7 +88,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/audioButton1"
         android:text="Zurück"
+        android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true"/>
-
 
 </RelativeLayout>

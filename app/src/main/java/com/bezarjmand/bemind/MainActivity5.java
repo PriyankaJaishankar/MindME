@@ -1,6 +1,5 @@
 package com.bezarjmand.bemind;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
@@ -38,20 +37,25 @@ public class MainActivity5 extends AppCompatActivity implements View.OnClickList
         backButton.setOnClickListener(this);
     }
 
-    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.audioButton1) {
-            String text = "Finden Sie eine bequeme Position und schließen Sie die Augen. Atmen Sie tief durch die Nase ein und lassen Sie dabei zu, dass sich Ihr Bauch hebt, während Sie Ihre Lungen mit Luft füllen. Atmen Sie langsam durch den Mund aus und lösen Sie mit jedem Ausatmen jegliche Anspannung oder Anspannung. Setzen Sie dieses tiefe Atemmuster fort, konzentrieren Sie sich auf das Gefühl Ihres Atems und lassen Sie alle ablenkenden Gedanken los. Machen Sie diese Übung regelmäßig, um Entspannung und Achtsamkeit zu fördern.";
+            String text = "Nehmen Sie eine bequeme Position ein und schließen Sie die Augen. Atmen Sie tief durch die Nase ein und erlauben Sie Ihrem Bauch, sich zu heben, während Sie Ihre Lungen mit Luft füllen. Atmen Sie langsam durch den Mund aus und lassen Sie dabei mit jedem Ausatmen jegliche Anspannung oder Stress los. Setzen Sie diese tiefe Atmung fort, konzentrieren Sie sich auf das Gefühl Ihres Atems und lassen Sie alle ablenkenden Gedanken los. Üben Sie diese Übung regelmäßig, um Entspannung und Achtsamkeit zu fördern.";
             speakText(text);
         } else if (view.getId() == R.id.backButton1) {
+            stopSpeaking();
             finish();
         }
     }
 
-
     private void speakText(String text) {
         textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
+    }
+
+    private void stopSpeaking() {
+        if (textToSpeech != null) {
+            textToSpeech.stop();
+        }
     }
 
     @Override
@@ -63,5 +67,3 @@ public class MainActivity5 extends AppCompatActivity implements View.OnClickList
         }
     }
 }
-
-

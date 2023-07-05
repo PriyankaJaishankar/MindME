@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt"
         android:layout_marginTop="16dp"
-        android:text="Step 1: Finden Sie einen ruhigen und komfortablen Ort."
+        android:text="Schritt 1: Finden Sie einen ruhigen und komfortablen Ort."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt1"
         android:layout_marginTop="16dp"
-        android:text="Step 2: Wählen Sie ein Mantra, das Sie anspricht."
+        android:text="Schritt 2: Wählen Sie ein Mantra, das Sie anspricht."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt2"
         android:layout_marginTop="16dp"
-        android:text="Step 3: Schließen Sie die Augen und atmen Sie ein paar Mal tief durch, um sich zu entspannen."
+        android:text="Schritt 3: Schließen Sie die Augen und atmen Sie ein paar Mal tief durch, um sich zu entspannen."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt3"
         android:layout_marginTop="16dp"
-        android:text="Step 4: Wiederholen Sie das Mantra leise oder laut und richten Sie dabei Ihre Aufmerksamkeit auf den Klang und die Vibration."
+        android:text="Schritt 4: Wiederholen Sie das Mantra leise oder laut und richten Sie dabei Ihre Aufmerksamkeit auf den Klang und die Vibration."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt4"
         android:layout_marginTop="16dp"
-        android:text="Step 5: Setzen Sie die Übung einige Minuten lang fort und bringen Sie Ihre Gedanken immer dann zum Mantra zurück, wenn sie abschweifen."
+        android:text="Schritt 5: Setzen Sie die Übung einige Minuten lang fort und bringen Sie Ihre Gedanken immer dann zum Mantra zurück, wenn sie abschweifen."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>

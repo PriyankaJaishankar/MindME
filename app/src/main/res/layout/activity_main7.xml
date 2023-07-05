@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt"
         android:layout_marginTop="16dp"
-        android:text="Step 1: Finden Sie einen geeigneten Standort."
+        android:text="Schritt 1: Finden Sie einen geeigneten Standort."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt1"
         android:layout_marginTop="16dp"
-        android:text="Step 2: Stehen Sie achtsam und werden Sie sich Ihres Körpers bewusst."
+        android:text="Schritt 2: Stehen Sie achtsam und werden Sie sich Ihres Körpers bewusst."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt2"
         android:layout_marginTop="16dp"
-        android:text="Step 3: Gehen Sie langsam und bewusst und konzentrieren Sie sich dabei auf die Empfindungen in Ihren Füßen und Beinen."
+        android:text="Schritt 3: Gehen Sie langsam und bewusst und konzentrieren Sie sich dabei auf die Empfindungen in Ihren Füßen und Beinen."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt3"
         android:layout_marginTop="16dp"
-        android:text="Step 4: Bleiben Sie präsent und lenken Sie Ihre Aufmerksamkeit sanft zurück, wenn sie abschweift."
+        android:text="Schritt 4: Bleiben Sie präsent und lenken Sie Ihre Aufmerksamkeit sanft zurück, wenn sie abschweift."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt4"
         android:layout_marginTop="16dp"
-        android:text="Step 5: Beobachten Sie Ihre Umgebung ohne Urteil."
+        android:text="Schritt 5: Beobachten Sie Ihre Umgebung ohne Urteil."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>

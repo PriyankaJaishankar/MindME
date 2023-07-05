@@ -1,8 +1,8 @@
 package com.bezarjmand.bemind;
 
-
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
+import android.speech.tts.UtteranceProgressListener;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -22,7 +22,7 @@ public class MainActivity8 extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main8);
 
         backButton = findViewById(R.id.backButton4);
         audioButton = findViewById(R.id.audioButton4);
@@ -45,6 +45,21 @@ public class MainActivity8 extends AppCompatActivity implements View.OnClickList
                 }
             }
         });
+
+        textToSpeech.setOnUtteranceProgressListener(new UtteranceProgressListener() {
+            @Override
+            public void onStart(String utteranceId) {}
+
+            @Override
+            public void onDone(String utteranceId) {
+                if (utteranceId.equals("playback_complete")) {
+                    // Playback completed, perform any necessary tasks
+                }
+            }
+
+            @Override
+            public void onError(String utteranceId) {}
+        });
     }
 
     @Override
@@ -65,7 +80,7 @@ public class MainActivity8 extends AppCompatActivity implements View.OnClickList
 
             String textToRead = "Bei der Meditation der liebenden Güte geht es darum, Gefühle der Liebe, Freundlichkeit und des Mitgefühls gegenüber sich selbst und anderen zu kultivieren. Finden Sie eine bequeme Position und schließen Sie die Augen. Beginnen Sie damit, freundliche und liebevolle Gedanken auf sich selbst zu richten und sich Ihr eigenes Wohlbefinden, Glück und Frieden zu wünschen. Als nächstes richten Sie diese Gefühle auf einen geliebten Menschen aus und senden ihm Wünsche der Liebe und des Glücks. Erweitern Sie dann Ihren Kreis des Mitgefühls, um Bekannte, Fremde und sogar schwierige Menschen einzubeziehen, und äußern Sie ihnen die gleichen Wünsche nach Liebe und Wohlbefinden. Breiten Sie diese Gefühle der Liebe und Güte schließlich auf alle Wesen in der Nähe und in der Ferne aus. Diese Praxis trägt dazu bei, positive Emotionen, Empathie und die Verbindung zu anderen zu fördern. Üben Sie regelmäßig, um ein mitfühlendes Herz und ein Gefühl der Verbundenheit zu entwickeln.";
             HashMap<String, String> params = new HashMap<>();
-            params.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, "unique_id");
+            params.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, "playback_complete");
 
             textToSpeech.speak(textToRead, TextToSpeech.QUEUE_FLUSH, params);
         } else if (view == stopButton) {

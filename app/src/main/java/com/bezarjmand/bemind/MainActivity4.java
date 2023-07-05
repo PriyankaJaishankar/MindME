@@ -2,7 +2,6 @@ package com.bezarjmand.bemind;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.Button;
 
@@ -11,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity4 extends AppCompatActivity {
 
     Button breathingExercisesButton, bodyScanButton, mindfulWalkingButton, lovingKindnessButton, mantraButton, soundButton;
-    TextToSpeech textToSpeech;
+    //TextToSpeech textToSpeech;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,22 +137,22 @@ public class MainActivity4 extends AppCompatActivity {
 //        });
     }
 
-    private void speakText(String text) {
-        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
-    }
-
-    private void navigateToPage(Class<?> cls, String text) {
-        Intent intent = new Intent(MainActivity4.this, cls);
-        intent.putExtra("textToRead", text);
-        startActivity(intent);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (textToSpeech != null) {
-            textToSpeech.stop();
-            textToSpeech.shutdown();
-        }
-    }
+//    private void speakText(String text) {
+//        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
+//    }
+//
+//    private void navigateToPage(Class<?> cls, String text) {
+//        Intent intent = new Intent(MainActivity4.this, cls);
+//        intent.putExtra("textToRead", text);
+//        startActivity(intent);
+//    }
+//
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        if (textToSpeech != null) {
+//            textToSpeech.stop();
+//            textToSpeech.shutdown();
+//        }
+//    }
 }

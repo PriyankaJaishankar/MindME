@@ -1,6 +1,5 @@
 package com.bezarjmand.bemind;
 
-
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;

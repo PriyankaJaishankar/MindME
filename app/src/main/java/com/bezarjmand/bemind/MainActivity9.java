@@ -1,6 +1,5 @@
 package com.bezarjmand.bemind;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
@@ -38,7 +37,7 @@ public class MainActivity9 extends AppCompatActivity implements View.OnClickList
         backButton.setOnClickListener(this);
     }
 
-    @SuppressLint("NonConstantResourceId")
+    //@SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.audioButton5) {

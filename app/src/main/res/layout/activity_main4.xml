@@ -1,65 +1,62 @@
 <!-- activity_main.xml -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
+<LinearLayout        xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:orientation="vertical"
     android:background="@drawable/manifet_chill">
 
-    <Button
-        android:id="@+id/BreathingExercises"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="AtmenÜbung"
-        android:layout_margin="8dp"
-        android:layout_centerInParent="true" />
+        android:gravity="center">
 
-    <Button
-        android:id="@+id/BodyScan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Körperscan"
-        android:layout_below="@id/BreathingExercises"
-        android:layout_margin="8dp"
-        android:layout_centerHorizontal="true" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Atmen Med"
+            android:id="@+id/BreathingExercises"/>
 
-    <Button
-        android:id="@+id/MindfulWalking"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Achtsames Spazieren"
-        android:layout_below="@id/BodyScan"
-        android:layout_margin="8dp"
-        android:layout_centerHorizontal="true" />
-    <Button
-        android:id="@+id/love"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Liebes- und Freundlichkeitsmeditation"
-        android:layout_below="@id/MindfulWalking"
-        android:layout_margin="8dp"
-        android:layout_centerHorizontal="true" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="KörperScan"
+            android:id="@+id/BodyScan"/>
 
-    <Button
-        android:id="@+id/Mantra"
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spazieren"
+            android:id="@+id/MindfulWalking"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/love"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Mantra Meditation" />
+        android:gravity="center">
 
-    <Button
-        android:id="@+id/sound"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/Mantra"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="8dp"
-        android:text="Klang Meditaiton" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Liebes Med"
+            android:id="@+id/love"/>
 
-</RelativeLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mantra"
+            android:id="@+id/Mantra"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Klang Med"
+            android:id="@+id/sound"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+
 

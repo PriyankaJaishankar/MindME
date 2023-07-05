@@ -39,6 +39,7 @@
         android:layout_below="@id/MindfulWalking"
         android:layout_margin="8dp"
         android:layout_centerHorizontal="true" />
+
     <Button
         android:id="@+id/Mantra"
         android:layout_width="wrap_content"

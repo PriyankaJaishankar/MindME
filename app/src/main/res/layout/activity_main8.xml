@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,7 +7,7 @@
     android:padding="16dp"
     android:background="#E1D3BA"
     tools:context=".MainActivity"
-
+android:orientation="vertical"
     >
 
     <TextView
@@ -73,7 +73,16 @@
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
 
-
+    <GridLayout
+        android:id="@+id/moodGridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:alignmentMode="alignMargins"
+        android:columnCount="3"
+        android:columnOrderPreserved="false"
+        android:layout_margin="10dp"
+        android:rowCount="1">
     <Button
         android:id="@+id/audioButton4"
         android:layout_width="wrap_content"
@@ -83,22 +92,24 @@
         android:layout_margin="32dp"
         android:layout_centerHorizontal="true"/>
 
+        <Button
+            android:id="@+id/stop4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/backButton4"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="32dp"
+            android:text="Audio anhalten" />
+        <Button
+            android:id="@+id/backButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/audioButton4"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="32dp"
+            android:text="Züruck" />
 
-    <Button
-        android:id="@+id/backButton4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/audioButton4"
-        android:text="Züruck"
-        android:layout_margin="16dp"
-        android:layout_centerHorizontal="true"/>
-    <Button
-        android:id="@+id/stop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/backButton4"
-        android:text="Stop"
-        android:layout_margin="16dp"
-        android:layout_centerHorizontal="true"/>
 
-</RelativeLayout>
+    </GridLayout>
+
+</LinearLayout>

@@ -23,17 +23,28 @@ public class MainActivity9 extends AppCompatActivity implements View.OnClickList
             @Override
             public void onInit(int status) {
                 if (status == TextToSpeech.SUCCESS) {
-                    textToSpeech.setLanguage(Locale.getDefault());
+                    // Set the language to German
+                    Locale germanLocale = new Locale("de", "DE");
+                    int result = textToSpeech.setLanguage(germanLocale);
+
+                    if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                        Toast.makeText(MainActivity9.this, "Deutsch wird nicht unterstützt.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        // Set the speech rate to a slower value
+                        textToSpeech.setSpeechRate(0.7f);
+                    }
                 } else {
-                    Toast.makeText(MainActivity9.this, "TextToSpeech initialization failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity9.this, "TextToSpeech-Initialisierung fehlgeschlagen.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
         Button playButton = findViewById(R.id.audioButton5);
+        Button stopButton = findViewById(R.id.stop5);
         Button backButton = findViewById(R.id.backButton5);
 
         playButton.setOnClickListener(this);
+        stopButton.setOnClickListener(this);
         backButton.setOnClickListener(this);
     }
 
@@ -43,7 +54,9 @@ public class MainActivity9 extends AppCompatActivity implements View.OnClickList
         if (view.getId() == R.id.audioButton5) {
             String text = "Bei der Mantra-Meditation wird ein Wort, eine Phrase oder ein Ton, ein Mantra genannt, wiederholt, um den Geist zu fokussieren und ein Gefühl von Frieden und Klarheit zu entwickeln. Hier ist eine kurze Beschreibung der Mantra-Meditation: Wählen Sie ein Mantra, das Sie anspricht. Es kann ein traditionelles Sanskrit-Mantra wie „Om“ oder ein einfacher Satz wie „Ich bin ruhig und zentriert“ sein. Suchen Sie sich einen ruhigen und bequemen Platz zum Sitzen, schließen Sie die Augen und atmen Sie ein paar Mal tief durch, um sich zu entspannen. Beginnen Sie, das von Ihnen gewählte Mantra still oder laut zu wiederholen und richten Sie dabei Ihre Aufmerksamkeit auf den Klang und die Schwingung der Wörter. Wann immer Ihre Gedanken abschweifen, lenken Sie Ihre Aufmerksamkeit sanft wieder auf das Mantra. Üben Sie diese Meditation einige Minuten lang und lassen Sie sich vom Mantra in einen Zustand tiefer Entspannung und innerer Stille führen. Mantra-Meditation kann helfen, den Geist zu beruhigen, die Konzentration zu verbessern und ein Gefühl von Frieden und Klarheit zu vermitteln. Regelmäßiges Üben kann Ihre Verbindung zum gegenwärtigen Moment vertiefen und ein Gefühl der inneren Ruhe fördern.";
             speakText(text);
-        } else if (view.getId() == R.id.backButton5) {
+        }else if (view.getId() == R.id.stop5) {
+            stopSpeaking();
+        }else if (view.getId() == R.id.backButton5) {
             finish();
         }
     }
@@ -53,6 +66,11 @@ public class MainActivity9 extends AppCompatActivity implements View.OnClickList
         textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
     }
 
+    private void stopSpeaking() {
+        if (textToSpeech != null && textToSpeech.isSpeaking()) {
+            textToSpeech.stop();
+        }
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();

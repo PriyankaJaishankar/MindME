@@ -23,34 +23,51 @@ public class MainActivity10 extends AppCompatActivity implements View.OnClickLis
             @Override
             public void onInit(int status) {
                 if (status == TextToSpeech.SUCCESS) {
-                    textToSpeech.setLanguage(Locale.getDefault());
+                    // Set the language to German
+                    Locale germanLocale = new Locale("de", "DE");
+                    int result = textToSpeech.setLanguage(germanLocale);
+
+                    if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                        Toast.makeText(MainActivity10.this, "Deutsch wird nicht unterstützt.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        // Set the speech rate to a slower value
+                        textToSpeech.setSpeechRate(0.7f);
+                    }
                 } else {
-                    Toast.makeText(MainActivity10.this, "TextToSpeech initialization failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity10.this, "TextToSpeech-Initialisierung fehlgeschlagen.", Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+            });
 
         Button playButton = findViewById(R.id.audioButton6);
+        Button stopButton = findViewById(R.id.stop6);
         Button backButton = findViewById(R.id.backButton6);
 
         playButton.setOnClickListener(this);
+        stopButton.setOnClickListener(this);
         backButton.setOnClickListener(this);
     }
 
-    //@SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.audioButton6) {
             String text = "Bei der Klangmeditation konzentriert man sich auf äußere oder innere Geräusche wie den Atem oder bestimmte Geräusche wie Klangschalen oder Naturgeräusche, um Achtsamkeit und tiefe Entspannung zu fördern. Hier ist eine kurze Beschreibung der Klangmeditation:Suchen Sie sich einen ruhigen und bequemen Platz zum Sitzen oder Liegen. Schließen Sie die Augen und atmen Sie ein paar Mal tief durch, um sich zu entspannen. Lenken Sie Ihre Aufmerksamkeit auf die Geräusche um Sie herum, sowohl in der Nähe als auch in der Ferne. Hören Sie sich einfach die Geräusche an, ohne sie zu beurteilen oder zu analysieren, und lassen Sie sie kommen und gehen. Beachten Sie die Qualitäten der Klänge, wie Tonhöhe, Lautstärke und Rhythmus. Wenn Ihre Gedanken abschweifen, konzentrieren Sie sich sanft wieder auf den gegenwärtigen Moment und die Geräusche um Sie herum. Sie können auch bestimmte Klanginstrumente oder Aufnahmen verwenden, um das Erlebnis zu verbessern. Üben Sie regelmäßig Klangmeditation, um ein Gefühl der Präsenz zu entwickeln, Ihr Bewusstsein zu vertiefen und die Entspannung zu fördern. Es kann eine beruhigende und eindringliche Möglichkeit sein, sich mit dem gegenwärtigen Moment zu verbinden.";
             speakText(text);
+        } else if (view.getId() == R.id.stop6) {
+            stopSpeaking();
         } else if (view.getId() == R.id.backButton6) {
             finish();
         }
     }
 
-
     private void speakText(String text) {
         textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
+    }
+
+    private void stopSpeaking() {
+        if (textToSpeech != null && textToSpeech.isSpeaking()) {
+            textToSpeech.stop();
+        }
     }
 
     @Override
@@ -62,4 +79,3 @@ public class MainActivity10 extends AppCompatActivity implements View.OnClickLis
         }
     }
 }
-

@@ -1,0 +1,8 @@
+<textview_border xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Define the border properties for TextView here -->
+    <solid android:color="@android:color/transparent" />
+    <stroke
+        android:width="2dp"
+        android:color="#000000" />
+    <corners android:radius="8dp" />
+</textview_border>

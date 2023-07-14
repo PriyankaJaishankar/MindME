@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BeMind"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/textview_border" />
+
         <activity
             android:name=".MainActivity10"
             android:exported="false" />
@@ -19,6 +23,8 @@
             android:name=".MainActivity9"
             android:exported="false" />
         <activity android:name=".ViewHistory" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".MotivationalActivity" />
         <activity
             android:name=".MainActivity7"
             android:exported="false" />

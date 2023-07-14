@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void openBemind(){
-        Intent intent = new Intent(this, MainActivity2.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 

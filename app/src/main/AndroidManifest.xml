@@ -12,6 +12,79 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BeMind"
         tools:targetApi="31">
+        <activity
+            android:name=".MainActivity34"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity33"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity32"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity31"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity30"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity29"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity28"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity27"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity26"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity25"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity24"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity23"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity22"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity21"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity20"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity19"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity18"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity17"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity16"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity15"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity14"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity13"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity12"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity11"
+            android:exported="false" />
+
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@xml/textview_border" />

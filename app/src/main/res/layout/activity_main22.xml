@@ -14,7 +14,7 @@
         android:id="@+id/stepbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hier ist Mantra Meditation\nFolgen Sie den unten stehenden Schritten:"
+        android:text="Hier ist GehMeditation\nFolgen Sie den unten stehenden Schritten:"
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt"
         android:layout_marginTop="16dp"
-        android:text="Schritt 1: Finden Sie einen ruhigen und komfortablen Ort."
+        android:text="Schritt 5: Beobachten Sie Ihre Umgebung ohne Urteil."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -45,7 +45,7 @@
         android:rowCount="1">
 
         <Button
-            android:id="@+id/audioButtonm1"
+            android:id="@+id/audioButtong5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -53,7 +53,7 @@
             android:layout_margin="32dp"
             android:text="Audio abspielen" />
         <Button
-            android:id="@+id/stopm1"
+            android:id="@+id/stopg5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/backButton4"
@@ -62,7 +62,7 @@
             android:text="Audio anhalten" />
 
         <Button
-            android:id="@+id/backButtonm1"
+            android:id="@+id/backButtong5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/audioButton1"
@@ -70,12 +70,12 @@
             android:layout_margin="32dp"
             android:text="Zurück" />
         <Button
-            android:id="@+id/nextButtonm1"
+            android:id="@+id/nextButtong5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_margin="32dp"
-            android:text="Next" />
+            android:text="Next Übung" />
 
     </GridLayout>
 

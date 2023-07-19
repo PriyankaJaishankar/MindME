@@ -1,4 +1,3 @@
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,16 +5,16 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:padding="16dp"
-    android:background="#E1D3BA"
     tools:context=".MainActivity"
     android:orientation="vertical"
+    android:background="#E1D3BA"
     >
 
     <TextView
         android:id="@+id/stepbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hier ist Klang Meditation\nFolgen Sie den unteren Schritten:"
+        android:text="Hier ist Klang Meditation\nFolgen Sie den unten stehenden Schritten:"
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -32,47 +31,7 @@
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
 
-    <TextView
-        android:id="@+id/stepbt2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/stepbt1"
-        android:layout_marginTop="16dp"
-        android:text="Schritt 2: Wählen Sie einen beruhigenden Klang oder ein beruhigendes Instrument."
-        android:textSize="18sp"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"/>
 
-    <TextView
-        android:id="@+id/stepbt3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/stepbt2"
-        android:layout_marginTop="16dp"
-        android:text="Schritt 3: Machen Sie es sich bequem im Sitzen oder Liegen."
-        android:textSize="18sp"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"/>
-    <TextView
-        android:id="@+id/stepbt4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/stepbt3"
-        android:layout_marginTop="16dp"
-        android:text="Schritt 4: Schließen Sie die Augen und konzentrieren Sie sich auf das Geräusch."
-        android:textSize="18sp"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"/>
-    <TextView
-        android:id="@+id/stepbt5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/stepbt4"
-        android:layout_marginTop="16dp"
-        android:text="Schritt 5: Atmen Sie tief ein und lassen Sie sich beim Meditieren vom Klang leiten."
-        android:textSize="18sp"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"/>
 
     <GridLayout
         android:id="@+id/moodGridLayout"
@@ -84,31 +43,42 @@
         android:columnOrderPreserved="false"
         android:layout_margin="10dp"
         android:rowCount="1">
-    <Button
-        android:id="@+id/audioButton6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/stepbt5"
-        android:text="Audio Abspielen"
-        android:layout_margin="32dp"
-        android:layout_centerHorizontal="true"/>
-    <Button
-        android:id="@+id/stop6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/backButton4"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="32dp"
-        android:text="Audio anhalten" />
 
         <Button
-            android:id="@+id/backButton6"
+            android:id="@+id/audioButtonkl1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/audioButton6"
+            android:layout_below="@id/stepbt1"
             android:layout_centerHorizontal="true"
             android:layout_margin="32dp"
-            android:text="Züruck" />
+            android:text="Audio abspielen" />
+        <Button
+            android:id="@+id/stopkl1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/backButton4"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="32dp"
+            android:text="Audio anhalten" />
+
+        <Button
+            android:id="@+id/backButtonkl1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/audioButton1"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="32dp"
+            android:text="Zurück" />
+        <Button
+            android:id="@+id/nextButtonkl1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="32dp"
+            android:text="Next" />
+
     </GridLayout>
+
+
 
 </LinearLayout>

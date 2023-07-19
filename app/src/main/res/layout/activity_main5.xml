@@ -31,47 +31,7 @@
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
 
-    <TextView
-        android:id="@+id/stepbt2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/stepbt1"
-        android:layout_marginTop="16dp"
-        android:text="Schritt 2: Atmen Sie tief durch die Nase ein und füllen Sie Ihre Lungen mit Luft."
-        android:textSize="18sp"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"/>
 
-    <TextView
-        android:id="@+id/stepbt3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/stepbt2"
-        android:layout_marginTop="16dp"
-        android:text="Schritt 3: Atmen Sie langsam durch den Mund aus und lassen Sie dabei jegliche Anspannung oder Stress los."
-        android:textSize="18sp"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"/>
-    <TextView
-        android:id="@+id/stepbt4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/stepbt3"
-        android:layout_marginTop="16dp"
-        android:text="Schritt 4: Zählen Sie Ihre Atemzüge, um einen gleichmäßigen Rhythmus beizubehalten."
-        android:textSize="18sp"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"/>
-    <TextView
-        android:id="@+id/stepbt5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/stepbt4"
-        android:layout_marginTop="16dp"
-        android:text="Schritt 5: Bleiben Sie präsent und lenken Sie Ihre Aufmerksamkeit auf die Empfindungen jedes Atems."
-        android:textSize="18sp"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"/>
 
     <GridLayout
         android:id="@+id/moodGridLayout"
@@ -88,7 +48,6 @@
             android:id="@+id/audioButton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/stepbt5"
             android:layout_centerHorizontal="true"
             android:layout_margin="32dp"
             android:text="Audio abspielen" />
@@ -105,10 +64,18 @@
             android:id="@+id/backButton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/audioButton1"
+
             android:layout_centerHorizontal="true"
             android:layout_margin="32dp"
             android:text="Zurück" />
+        <Button
+            android:id="@+id/nextButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="32dp"
+            android:text="Next" />
+
     </GridLayout>
 
 

@@ -1,5 +1,11 @@
 package com.bezarjmand.bemind;
 
+
+
+
+
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
@@ -18,10 +24,12 @@ public class MainActivity7 extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main7);
-        
-        Button playButton = findViewById(R.id.audioButton3);
-        Button backButton = findViewById(R.id.backButton3);
-        Button stopButton = findViewById(R.id.stop3);
+
+        Button playButton = findViewById(R.id.audioButtong1);
+        Button backButton = findViewById(R.id.backButtong1);
+        Button stopButton = findViewById(R.id.stopg1);
+        Button nextButton= findViewById(R.id.nextButtong1);
+        nextButton.setOnClickListener(this);
         stopButton.setOnClickListener(this);
         playButton.setOnClickListener(this);
         backButton.setOnClickListener(this);
@@ -46,19 +54,19 @@ public class MainActivity7 extends AppCompatActivity implements View.OnClickList
             }
         });
 
-        
+
     }
 
     //@SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
-        if (view.getId() == R.id.audioButton3) {
-            String text = "Beteiligen Sie sich am achtsamen Gehen, indem Sie jeden Schritt bewusst und präsent unternehmen. Achten Sie beim Gehen auf das Gefühl, dass Ihre Füße den Boden berühren. Nehmen Sie die Bewegung Ihres Körpers und den Rhythmus Ihrer Schritte wahr. Seien Sie beim Gehen völlig präsent und beobachten Sie die Anblicke, Geräusche und Empfindungen um Sie herum. Wenn Ihre Gedanken abschweifen, konzentrieren Sie sich wieder sanft auf das Gehen. Diese Praxis kann Ihnen dabei helfen, ein Gefühl der Erdung zu entwickeln, Ihre Verbindung zum gegenwärtigen Moment zu stärken und mehr Achtsamkeit in Ihre täglichen Aktivitäten zu bringen.";
+        if (view.getId() == R.id.audioButtong1) {
+            String text = "Schritt 1: Finden Sie einen geeigneten Standort.";
             speakText(text);
-        }else if (view.getId() == R.id.stop3) {
+        }else if (view.getId() == R.id.stopg1) {
             stopSpeaking();
         }
-        else if (view.getId() == R.id.backButton3) {
+        else if (view.getId() == R.id.backButtong1) {
             finish();
         }
     }
@@ -73,7 +81,10 @@ public class MainActivity7 extends AppCompatActivity implements View.OnClickList
             textToSpeech.stop();
         }
     }
-
+    public void onNextButtonClick(View view) {
+        Intent intent = new Intent(this, MainActivity19.class);
+        startActivity(intent);
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();

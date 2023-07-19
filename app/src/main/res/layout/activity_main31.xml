@@ -14,7 +14,7 @@
         android:id="@+id/stepbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hier ist Mantra Meditation\nFolgen Sie den unten stehenden Schritten:"
+        android:text="Hier ist Klang Meditation\nFolgen Sie den unten stehenden Schritten:"
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt"
         android:layout_marginTop="16dp"
-        android:text="Schritt 1: Finden Sie einen ruhigen und komfortablen Ort."
+        android:text="Schritt 2: Wählen Sie einen beruhigenden Klang oder ein beruhigendes Instrument."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -45,15 +45,15 @@
         android:rowCount="1">
 
         <Button
-            android:id="@+id/audioButtonm1"
+            android:id="@+id/audioButtonkl2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:layout_below="@id/stepbt1"
             android:layout_centerHorizontal="true"
             android:layout_margin="32dp"
             android:text="Audio abspielen" />
         <Button
-            android:id="@+id/stopm1"
+            android:id="@+id/stopkl2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/backButton4"
@@ -62,7 +62,7 @@
             android:text="Audio anhalten" />
 
         <Button
-            android:id="@+id/backButtonm1"
+            android:id="@+id/backButtonkl2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/audioButton1"
@@ -70,7 +70,7 @@
             android:layout_margin="32dp"
             android:text="Zurück" />
         <Button
-            android:id="@+id/nextButtonm1"
+            android:id="@+id/nextButtonkl2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"

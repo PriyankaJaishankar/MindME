@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
     xmlns:tools="http://schemas.android.com/tools"
@@ -14,19 +15,19 @@
         android:id="@+id/stepbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hier ist Mantra Meditation\nFolgen Sie den unten stehenden Schritten:"
+        android:text="Hier ist Atemübungen\nFolgen Sie den unten stehenden Schritten:"
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
         android:layout_centerInParent="true"/>
 
     <TextView
-        android:id="@+id/stepbt1"
+        android:id="@+id/stepbt32"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt"
         android:layout_marginTop="16dp"
-        android:text="Schritt 1: Finden Sie einen ruhigen und komfortablen Ort."
+        android:text="Schritt 5: Bleiben Sie präsent und lenken Sie Ihre Aufmerksamkeit auf die Empfindungen jedes Atems."
         android:textSize="18sp"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
@@ -34,7 +35,7 @@
 
 
     <GridLayout
-        android:id="@+id/moodGridLayout"
+        android:id="@+id/moodGridLayout4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -45,7 +46,7 @@
         android:rowCount="1">
 
         <Button
-            android:id="@+id/audioButtonm1"
+            android:id="@+id/audioButton5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -53,7 +54,7 @@
             android:layout_margin="32dp"
             android:text="Audio abspielen" />
         <Button
-            android:id="@+id/stopm1"
+            android:id="@+id/stop5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/backButton4"
@@ -62,7 +63,7 @@
             android:text="Audio anhalten" />
 
         <Button
-            android:id="@+id/backButtonm1"
+            android:id="@+id/backButton5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/audioButton1"
@@ -70,12 +71,12 @@
             android:layout_margin="32dp"
             android:text="Zurück" />
         <Button
-            android:id="@+id/nextButtonm1"
+            android:id="@+id/nextButton5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_margin="32dp"
-            android:text="Next" />
+            android:text="Next Übung" />
 
     </GridLayout>
 

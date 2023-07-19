@@ -1,6 +1,7 @@
 package com.bezarjmand.bemind;
 
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -12,19 +13,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Locale;
 
-public class MainActivity10 extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity23 extends AppCompatActivity implements View.OnClickListener {
 
     private TextToSpeech textToSpeech;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main10);
+        setContentView(R.layout.activity_main23);
 
-        Button playButton = findViewById(R.id.audioButtonkl1);
-        Button backButton = findViewById(R.id.backButtonkl1);
-        Button stopButton = findViewById(R.id.stopkl1);
-        Button nextButton= findViewById(R.id.nextButtonkl1);
+        Button playButton = findViewById(R.id.audioButtonl2);
+        Button backButton = findViewById(R.id.backButtonl2);
+        Button stopButton = findViewById(R.id.stopl2);
+        Button nextButton= findViewById(R.id.nextButtonl2);
         nextButton.setOnClickListener(this);
         stopButton.setOnClickListener(this);
         playButton.setOnClickListener(this);
@@ -39,13 +40,13 @@ public class MainActivity10 extends AppCompatActivity implements View.OnClickLis
                     int result = textToSpeech.setLanguage(germanLocale);
 
                     if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                        Toast.makeText(MainActivity10.this, "Deutsch wird nicht unterstützt.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity23.this, "Deutsch wird nicht unterstützt.", Toast.LENGTH_SHORT).show();
                     } else {
                         // Set the speech rate to a slower value
                         textToSpeech.setSpeechRate(0.7f);
                     }
                 } else {
-                    Toast.makeText(MainActivity10.this, "TextToSpeech-Initialisierung fehlgeschlagen.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity23.this, "TextToSpeech-Initialisierung fehlgeschlagen.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -56,13 +57,13 @@ public class MainActivity10 extends AppCompatActivity implements View.OnClickLis
     //@SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
-        if (view.getId() == R.id.audioButtonkl1) {
-            String text = "Schritt 1: Suchen Sie sich einen ruhigen Ort.";
+        if (view.getId() == R.id.audioButtonl2) {
+            String text = "Schritt 2: Entwickeln Sie liebevolle Güte sich selbst gegenüber.";
             speakText(text);
-        }else if (view.getId() == R.id.stopkl1) {
+        }else if (view.getId() == R.id.stopl2) {
             stopSpeaking();
         }
-        else if (view.getId() == R.id.backButtonkl1) {
+        else if (view.getId() == R.id.backButtonl2) {
             finish();
         }
     }
@@ -78,7 +79,7 @@ public class MainActivity10 extends AppCompatActivity implements View.OnClickLis
         }
     }
     public void onNextButtonClick(View view) {
-        Intent intent = new Intent(this, MainActivity31.class);
+        Intent intent = new Intent(this, MainActivity24.class);
         startActivity(intent);
     }
     @Override
@@ -90,4 +91,3 @@ public class MainActivity10 extends AppCompatActivity implements View.OnClickLis
         }
     }
 }
-

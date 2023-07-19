@@ -3,111 +3,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E1D3BA"
     android:gravity="center"
+    android:padding="16dp"
+    tools:context=".MainActivity"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:background="#E1D3BA"
+    >
 
     <TextView
         android:id="@+id/stepbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:text="Hier ist Gehmeditation.\nFolgen Sie den unteren Schritten:"
+        android:text="Hier ist GehMeditation\nFolgen Sie den unten stehenden Schritten:"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_centerInParent="true"/>
 
     <TextView
         android:id="@+id/stepbt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/stepbt"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:gravity="center"
         android:text="Schritt 1: Finden Sie einen geeigneten Standort."
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/stepbt2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/stepbt1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:textSize="18sp"
         android:gravity="center"
-        android:text="Schritt 2: Stehen Sie achtsam und werden Sie sich Ihres Körpers bewusst."
-        android:textSize="18sp" />
+        android:layout_centerHorizontal="true"/>
 
-    <TextView
-        android:id="@+id/stepbt3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/stepbt2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="Schritt 3: Gehen Sie langsam und bewusst und konzentrieren Sie sich dabei auf die Empfindungen in Ihren Füßen und Beinen."
-        android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/stepbt4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/stepbt3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="Schritt 4: Bleiben Sie präsent und lenken Sie Ihre Aufmerksamkeit sanft zurück, wenn sie abschweift."
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/stepbt5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/stepbt4"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
-        android:text="Schritt 5: Beobachten Sie Ihre Umgebung ohne Urteil."
-        android:textSize="18sp" />
 
     <GridLayout
         android:id="@+id/moodGridLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="10dp"
         android:alignmentMode="alignMargins"
         android:columnCount="3"
         android:columnOrderPreserved="false"
+        android:layout_margin="10dp"
         android:rowCount="1">
 
         <Button
-            android:id="@+id/audioButton3"
+            android:id="@+id/audioButtong1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/stepbt5"
+
             android:layout_centerHorizontal="true"
             android:layout_margin="32dp"
             android:text="Audio abspielen" />
         <Button
-            android:id="@+id/stop3"
+            android:id="@+id/stopg1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/backButton4"
             android:layout_centerHorizontal="true"
             android:layout_margin="32dp"
             android:text="Audio anhalten" />
+
         <Button
-            android:id="@+id/backButton3"
+            android:id="@+id/backButtong1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/audioButton3"
+            android:layout_below="@id/audioButton1"
             android:layout_centerHorizontal="true"
             android:layout_margin="32dp"
             android:text="Zurück" />
+        <Button
+            android:id="@+id/nextButtong1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="32dp"
+            android:text="Next" />
+
     </GridLayout>
+
+
 
 </LinearLayout>

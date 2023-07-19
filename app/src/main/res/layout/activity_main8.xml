@@ -5,16 +5,16 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:padding="16dp"
-    android:background="#E1D3BA"
     tools:context=".MainActivity"
-android:orientation="vertical"
+    android:orientation="vertical"
+    android:background="#E1D3BA"
     >
 
     <TextView
         android:id="@+id/stepbt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hier ist Loving Kindness Meditation\nFolgen Sie den unteren Schritten:"
+        android:text="Hier ist Loving Kindness Meditation\nFolgen Sie den unten stehenden Schritten:"
         android:textSize="24sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -31,47 +31,7 @@ android:orientation="vertical"
         android:gravity="center"
         android:layout_centerHorizontal="true"/>
 
-    <TextView
-        android:id="@+id/stepbt2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/stepbt1"
-        android:layout_marginTop="16dp"
-        android:text="Schritt 2: Entwickeln Sie liebevolle Güte sich selbst gegenüber."
-        android:textSize="18sp"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"/>
 
-    <TextView
-        android:id="@+id/stepbt3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/stepbt2"
-        android:layout_marginTop="16dp"
-        android:text="Schritt 3: Erweisen Sie einem geliebten Menschen Liebe und Güte."
-        android:textSize="18sp"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"/>
-    <TextView
-        android:id="@+id/stepbt4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/stepbt3"
-        android:layout_marginTop="16dp"
-        android:text="Schritt 4: Erweitern Sie den Kreis der liebevollen Güte, um neutrale und schwierige Menschen einzubeziehen."
-        android:textSize="18sp"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"/>
-    <TextView
-        android:id="@+id/stepbt5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/stepbt4"
-        android:layout_marginTop="16dp"
-        android:text="Schritt 5: Sitzen Sie in Stille und erleben Sie die Wärme liebevoller Güte."
-        android:textSize="18sp"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"/>
 
     <GridLayout
         android:id="@+id/moodGridLayout"
@@ -83,33 +43,42 @@ android:orientation="vertical"
         android:columnOrderPreserved="false"
         android:layout_margin="10dp"
         android:rowCount="1">
-    <Button
-        android:id="@+id/audioButton4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/stepbt5"
-        android:text="Audio abspielen"
-        android:layout_margin="32dp"
-        android:layout_centerHorizontal="true"/>
 
         <Button
-            android:id="@+id/stop4"
+            android:id="@+id/audioButtonl1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_centerHorizontal="true"
+            android:layout_margin="32dp"
+            android:text="Audio abspielen" />
+        <Button
+            android:id="@+id/stopl1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/backButton4"
             android:layout_centerHorizontal="true"
             android:layout_margin="32dp"
             android:text="Audio anhalten" />
+
         <Button
-            android:id="@+id/backButton4"
+            android:id="@+id/backButtonl1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/audioButton4"
+            android:layout_below="@id/audioButton1"
             android:layout_centerHorizontal="true"
             android:layout_margin="32dp"
-            android:text="Züruck" />
-
+            android:text="Zurück" />
+        <Button
+            android:id="@+id/nextButtonl1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="32dp"
+            android:text="Next" />
 
     </GridLayout>
+
+
 
 </LinearLayout>

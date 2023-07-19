@@ -1,5 +1,9 @@
 package com.bezarjmand.bemind;
 
+
+
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
@@ -18,6 +22,15 @@ public class MainActivity5 extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
+
+        Button playButton = findViewById(R.id.audioButton1);
+        Button backButton = findViewById(R.id.backButton1);
+        Button stopButton = findViewById(R.id.stop1);
+        Button nextButton= findViewById(R.id.nextButton1);
+        nextButton.setOnClickListener(this);
+        stopButton.setOnClickListener(this);
+        playButton.setOnClickListener(this);
+        backButton.setOnClickListener(this);
 
         textToSpeech = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -39,18 +52,14 @@ public class MainActivity5 extends AppCompatActivity implements View.OnClickList
             }
         });
 
-        Button playButton = findViewById(R.id.audioButton1);
-        Button backButton = findViewById(R.id.backButton1);
-        Button stopButton = findViewById(R.id.stop1);
-        stopButton.setOnClickListener(this);
-        playButton.setOnClickListener(this);
-        backButton.setOnClickListener(this);
+
     }
 
+    //@SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.audioButton1) {
-            String text = "Nehmen Sie eine bequeme Position ein und schließen Sie die Augen. Atmen Sie tief durch die Nase ein und erlauben Sie Ihrem Bauch, sich zu heben, während Sie Ihre Lungen mit Luft füllen. Atmen Sie langsam durch den Mund aus und lassen Sie dabei mit jedem Ausatmen jegliche Anspannung oder Stress los. Setzen Sie diese tiefe Atmung fort, konzentrieren Sie sich auf das Gefühl Ihres Atems und lassen Sie alle ablenkenden Gedanken los. Üben Sie diese Übung regelmäßig, um Entspannung und Achtsamkeit zu fördern.";
+            String text = "Suchen Sie sich eine bequeme Position und entspannen Sie Ihren Körper.";
             speakText(text);
         }else if (view.getId() == R.id.stop1) {
             stopSpeaking();
@@ -59,6 +68,7 @@ public class MainActivity5 extends AppCompatActivity implements View.OnClickList
             finish();
         }
     }
+
 
     private void speakText(String text) {
         textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
@@ -69,7 +79,10 @@ public class MainActivity5 extends AppCompatActivity implements View.OnClickList
             textToSpeech.stop();
         }
     }
-
+    public void onNextButtonClick(View view) {
+        Intent intent = new Intent(this, MainActivity11.class);
+        startActivity(intent);
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -79,3 +92,4 @@ public class MainActivity5 extends AppCompatActivity implements View.OnClickList
         }
     }
 }
+

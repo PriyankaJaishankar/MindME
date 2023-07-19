@@ -1,5 +1,8 @@
 package com.bezarjmand.bemind;
 
+
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
@@ -18,6 +21,15 @@ public class MainActivity8 extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main8);
+
+        Button playButton = findViewById(R.id.audioButtonl1);
+        Button backButton = findViewById(R.id.backButtonl1);
+        Button stopButton = findViewById(R.id.stopl1);
+        Button nextButton= findViewById(R.id.nextButtonl1);
+        nextButton.setOnClickListener(this);
+        stopButton.setOnClickListener(this);
+        playButton.setOnClickListener(this);
+        backButton.setOnClickListener(this);
 
         textToSpeech = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -39,24 +51,19 @@ public class MainActivity8 extends AppCompatActivity implements View.OnClickList
             }
         });
 
-        Button playButton = findViewById(R.id.audioButton4);
-        Button stopButton = findViewById(R.id.stop4);
-        Button backButton = findViewById(R.id.backButton4);
 
-        playButton.setOnClickListener(this);
-        stopButton.setOnClickListener(this);
-        backButton.setOnClickListener(this);
     }
 
     //@SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View view) {
-        if (view.getId() == R.id.audioButton4) {
-        String text ="Bei der Meditation der liebenden Güte geht es darum, Gefühle der Liebe, Freundlichkeit und des Mitgefühls gegenüber sich selbst und anderen zu kultivieren. Finden Sie eine bequeme Position und schließen Sie die Augen. Beginnen Sie damit, freundliche und liebevolle Gedanken auf sich selbst zu richten und sich Ihr eigenes Wohlbefinden, Glück und Frieden zu wünschen. Als nächstes richten Sie diese Gefühle auf einen geliebten Menschen aus und senden ihm Wünsche der Liebe und des Glücks. Erweitern Sie dann Ihren Kreis des Mitgefühls, um Bekannte, Fremde und sogar schwierige Menschen einzubeziehen, und äußern Sie ihnen die gleichen Wünsche nach Liebe und Wohlbefinden. Breiten Sie diese Gefühle der Liebe und Güte schließlich auf alle Wesen in der Nähe und in der Ferne aus. Diese Praxis trägt dazu bei, positive Emotionen, Empathie und die Verbindung zu anderen zu fördern. Üben Sie regelmäßig, um ein mitfühlendes Herz und ein Gefühl der Verbundenheit zu entwickeln.";
+        if (view.getId() == R.id.audioButtonl1) {
+            String text = "Schritt 1: Finden Sie eine bequeme Position und schließen Sie die Augen.";
             speakText(text);
-        }else if (view.getId() == R.id.stop4) {
+        }else if (view.getId() == R.id.stopl1) {
             stopSpeaking();
-        }else if (view.getId() == R.id.backButton4) {
+        }
+        else if (view.getId() == R.id.backButtonl1) {
             finish();
         }
     }
@@ -71,6 +78,10 @@ public class MainActivity8 extends AppCompatActivity implements View.OnClickList
             textToSpeech.stop();
         }
     }
+    public void onNextButtonClick(View view) {
+        Intent intent = new Intent(this, MainActivity23.class);
+        startActivity(intent);
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -80,4 +91,3 @@ public class MainActivity8 extends AppCompatActivity implements View.OnClickList
         }
     }
 }
-

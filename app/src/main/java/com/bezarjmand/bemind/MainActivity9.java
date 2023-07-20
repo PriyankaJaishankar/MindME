@@ -80,7 +80,7 @@ public class MainActivity9 extends AppCompatActivity {
     }
 
     private void playAudio() {
-        String textToRead = "Schritt 1: Finden Sie einen ruhigen und komfortablen Ort.";
+        String textToRead = "Hier sind die Schritte der Mantra-Meditation,Schritt 1: Finden Sie einen ruhigen und komfortablen Ort.";
         // Using Utterance ID to identify the utterance in onDone callback
         textToSpeech.speak(textToRead, TextToSpeech.QUEUE_FLUSH, null, "Step1Utterance");
     }

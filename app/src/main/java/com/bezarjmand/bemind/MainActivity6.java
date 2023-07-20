@@ -80,7 +80,7 @@ public class MainActivity6 extends AppCompatActivity {
     }
 
     private void playAudio() {
-        String textToRead = "Schritt 1: Machen Sie es sich bequem und schließen Sie die Augen.";
+        String textToRead = "Hier sind die Schritte der KörperScan, Schritt 1: Machen Sie es sich bequem und schließen Sie die Augen.";
         // Using Utterance ID to identify the utterance in onDone callback
         textToSpeech.speak(textToRead, TextToSpeech.QUEUE_FLUSH, null, "Step1Utterance");
     }

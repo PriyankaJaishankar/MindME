@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity4 extends AppCompatActivity {
 
-    Button breathingExercisesButton, bodyScanButton, mindfulWalkingButton, lovingKindnessButton, mantraButton, soundButton;
+    Button breathingExercisesButton, bodyScanButton, mindfulWalkingButton, lovingKindnessButton, mantraButton, soundButton, homeButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,7 @@ public class MainActivity4 extends AppCompatActivity {
         lovingKindnessButton = findViewById(R.id.love);
         mantraButton = findViewById(R.id.Mantra);
         soundButton = findViewById(R.id.sound);
+        homeButton = findViewById(R.id.homeButton);
 
         breathingExercisesButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +68,14 @@ public class MainActivity4 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity4.this, MainActivity10.class);
+                startActivity(intent);
+            }
+        });
+
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity4.this, MainActivity.class);
                 startActivity(intent);
             }
         });

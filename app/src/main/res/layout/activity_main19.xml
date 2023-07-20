@@ -1,84 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:gravity="center"
     android:padding="16dp"
-    tools:context=".MainActivity"
-    android:orientation="vertical"
-    android:background="#E1D3BA"
-    >
+    android:background="@color/material_dynamic_primary95">
 
+    <!-- Title -->
     <TextView
-        android:id="@+id/stepbt"
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hier ist GehMeditation\nFolgen Sie den unten stehenden Schritten:"
+        android:text="Hier sind die Schritte der GehMeditation"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:gravity="center"
-        android:layout_centerInParent="true"/>
+        android:layout_gravity="center"
+        android:gravity="center"/>
 
+    <!-- Step Text in Bold and Centered -->
     <TextView
-        android:id="@+id/stepbt1"
+        android:id="@+id/step_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/stepbt"
-        android:layout_marginTop="16dp"
         android:text="Schritt 2: Stehen Sie achtsam und werden Sie sich Ihres Körpers bewusst."
         android:textSize="18sp"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"/>
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:gravity="center"/>
 
-
-
-    <GridLayout
-        android:id="@+id/moodGridLayout"
+    <Button
+        android:id="@+id/audioButtong2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:alignmentMode="alignMargins"
-        android:columnCount="3"
-        android:columnOrderPreserved="false"
-        android:layout_margin="10dp"
-        android:rowCount="1">
+        android:text="Audio Abspielen"/>
 
-        <Button
-            android:id="@+id/audioButtong2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/stopg2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Audio Stoppen"/>
 
-            android:layout_centerHorizontal="true"
-            android:layout_margin="32dp"
-            android:text="Audio abspielen" />
-        <Button
-            android:id="@+id/stopg2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/backButton4"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="32dp"
-            android:text="Audio anhalten" />
-
-        <Button
-            android:id="@+id/backButtong2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/audioButton1"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="32dp"
-            android:text="Zurück" />
-        <Button
-            android:id="@+id/nextButtong2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="32dp"
-            android:text="Next" />
-
-    </GridLayout>
-
-
+    <!-- Back Button -->
+    <Button
+        android:id="@+id/backButtong2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zurück"/>
 
 </LinearLayout>

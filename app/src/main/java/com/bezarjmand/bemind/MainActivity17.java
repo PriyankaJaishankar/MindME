@@ -1,24 +1,17 @@
 package com.bezarjmand.bemind;
 
-
-
-
-
-
-
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
+import android.speech.tts.UtteranceProgressListener;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Locale;
 
-public class MainActivity17 extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity17 extends AppCompatActivity {
 
     private TextToSpeech textToSpeech;
 
@@ -27,68 +20,77 @@ public class MainActivity17 extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main17);
 
-        Button playButton = findViewById(R.id.audioButtonk4);
-        Button backButton = findViewById(R.id.backButtonk4);
-        Button stopButton = findViewById(R.id.stopk4);
-        Button nextButton= findViewById(R.id.nextButtonk4);
-        nextButton.setOnClickListener(this);
-        stopButton.setOnClickListener(this);
-        playButton.setOnClickListener(this);
-        backButton.setOnClickListener(this);
-
-        textToSpeech = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+        // Initialize TextToSpeech
+        textToSpeech = new TextToSpeech(MainActivity17.this, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
                 if (status == TextToSpeech.SUCCESS) {
-                    // Set the language to German
-                    Locale germanLocale = new Locale("de", "DE");
-                    int result = textToSpeech.setLanguage(germanLocale);
-
-                    if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                        Toast.makeText(MainActivity17.this, "Deutsch wird nicht unterstützt.", Toast.LENGTH_SHORT).show();
-                    } else {
-                        // Set the speech rate to a slower value
-                        textToSpeech.setSpeechRate(0.7f);
-                    }
-                } else {
-                    Toast.makeText(MainActivity17.this, "TextToSpeech-Initialisierung fehlgeschlagen.", Toast.LENGTH_SHORT).show();
+                    textToSpeech.setLanguage(Locale.GERMAN);
+                    // Play the audio automatically when the page is loaded
+                    playAudio();
                 }
             }
         });
 
+        // Set up the UtteranceProgressListener to detect when audio finishes
+        textToSpeech.setOnUtteranceProgressListener(new UtteranceProgressListener() {
+            @Override
+            public void onStart(String utteranceId) {
+                // Not needed for this implementation
+            }
 
+            @Override
+            public void onDone(String utteranceId) {
+                // Audio finished, navigate to the next page
+                navigateToNextPage();
+            }
+
+            @Override
+            public void onError(String utteranceId) {
+                // Not needed for this implementation
+            }
+        });
+
+        // Play Audio Button
+        Button playAudioButton = findViewById(R.id.audioButtonk4);
+        playAudioButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playAudio();
+            }
+        });
+
+        // Stop Audio Button
+        Button stopAudioButton = findViewById(R.id.stopk4);
+        stopAudioButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                stopAudio();
+            }
+        });
+
+        // Back Button
+        Button backButton = findViewById(R.id.backButtonk4);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
-    //@SuppressLint("NonConstantResourceId")
-    @Override
-    public void onClick(View view) {
-        if (view.getId() == R.id.audioButtonk4) {
-            String text = "Schritt 4: Bleiben Sie präsent und nicht wertend.";
-            speakText(text);
-        }else if (view.getId() == R.id.stopk4) {
-            stopSpeaking();
-        }
-        else if (view.getId() == R.id.backButtonk4) {
-            finish();
-        }
-
+    private void playAudio() {
+        String textToRead = "Schritt 4: Bleiben Sie präsent und nicht wertend.";
+        // Using Utterance ID to identify the utterance in onDone callback
+        textToSpeech.speak(textToRead, TextToSpeech.QUEUE_FLUSH, null, "Step1Utterance");
     }
 
-
-    private void speakText(String text) {
-        textToSpeech.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
-    }
-
-    private void stopSpeaking() {
+    private void stopAudio() {
         if (textToSpeech != null && textToSpeech.isSpeaking()) {
             textToSpeech.stop();
         }
     }
-    public void onNextButtonClick(View view) {
-        Intent intent;
-        intent = new Intent(this, MainActivity18.class);
-        startActivity(intent);
-    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -96,6 +98,19 @@ public class MainActivity17 extends AppCompatActivity implements View.OnClickLis
             textToSpeech.stop();
             textToSpeech.shutdown();
         }
+    }
+
+    // Override onBackPressed to stop audio before going back
+    @Override
+    public void onBackPressed() {
+        stopAudio();
+        super.onBackPressed();
+    }
+
+    private void navigateToNextPage() {
+        // Start the activity for the next step of the breathing exercise
+        Intent intent = new Intent(MainActivity17.this, MainActivity18.class);
+        startActivity(intent);
     }
 }
 

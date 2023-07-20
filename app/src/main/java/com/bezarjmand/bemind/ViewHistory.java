@@ -17,13 +17,18 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
+import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
 public class ViewHistory extends AppCompatActivity {
     private BarChart moodChart;
-
+    private List<String> moodList;
+    private List<String> dateList;
     // Initialize the DatabaseHelper
     private DatabaseHelper databaseHelper = new DatabaseHelper(this);
 
@@ -40,6 +45,11 @@ public class ViewHistory extends AppCompatActivity {
         moodChart.setDrawGridBackground(true);
         moodChart.setGridBackgroundColor(R.color.lightGray);
 
+        // Fetch mood data with date and time from the database
+        moodList = new ArrayList<>();
+        dateList = new ArrayList<>();
+        fetchMoodData();
+
         // Customize the X-axis color
         XAxis xAxis = moodChart.getXAxis();
         xAxis.setDrawGridLines(true);
@@ -55,17 +65,14 @@ public class ViewHistory extends AppCompatActivity {
         YAxis rightAxis = moodChart.getAxisRight();
         rightAxis.setEnabled(false);
 
-        // Fetch mood data from the database
-        List<String> moodList = fetchMoodData();
 
-        // Create entries for the BarChart
+        // Create a dataset with the mood entries
         List<BarEntry> entries = new ArrayList<>();
         for (int i = 0; i < moodList.size(); i++) {
             String mood = moodList.get(i);
             entries.add(new BarEntry(i, getMoodValue(mood)));
         }
 
-        // Create a dataset with the mood entries
         BarDataSet dataSet = new BarDataSet(entries, "Mood Data");
         dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
         dataSet.setValueTextSize(12f);
@@ -76,11 +83,14 @@ public class ViewHistory extends AppCompatActivity {
         // Set the bar chart data and customize it
         moodChart.setData(barData);
         moodChart.getDescription().setEnabled(false);
-        moodChart.getXAxis().setEnabled(false);
+        moodChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(dateList));
+        moodChart.getXAxis().setGranularity(1f);
+        moodChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
         moodChart.getAxisRight().setEnabled(false);
         moodChart.getLegend().setEnabled(false);
         moodChart.setFitBars(true);
         moodChart.invalidate();
+
 
         Button backToMoodSelectionButton = findViewById(R.id.backToMoodSelectionButton);
         backToMoodSelectionButton.setOnClickListener(new View.OnClickListener() {
@@ -108,23 +118,46 @@ public class ViewHistory extends AppCompatActivity {
                 clearHistory();
             }
         });
+// Set click listeners for the chart
+        moodChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+            @Override
+            public void onValueSelected(Entry e, Highlight h) {
+                int position = (int) e.getX();
+                String mood = moodList.get(position);
+                String date = dateList.get(position);
+
+                // Show the date, time, and corresponding mood when a bar is clicked
+                Toast.makeText(ViewHistory.this, "Date: " + date + "\nMood: " + mood, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected() {
+                // Do nothing when nothing is selected
+            }
+        });
+
     }
 
-    private List<String> fetchMoodData() {
-        List<String> moodList = new ArrayList<>();
+
+
+
+
+private void fetchMoodData() {
         SQLiteDatabase db = databaseHelper.getReadableDatabase();
         Cursor cursor = db.query(DatabaseHelper.TABLE_MOOD_HISTORY,
-                new String[]{DatabaseHelper.COLUMN_MOOD},
+                new String[]{DatabaseHelper.COLUMN_MOOD, DatabaseHelper.COLUMN_DATE},
                 null, null, null, null, null);
-        int columnIndex = cursor.getColumnIndex(DatabaseHelper.COLUMN_MOOD);
-        if (columnIndex != -1) {
+        int moodIndex = cursor.getColumnIndex(DatabaseHelper.COLUMN_MOOD);
+        int dateIndex = cursor.getColumnIndex(DatabaseHelper.COLUMN_DATE);
+        if (moodIndex != -1 && dateIndex != -1) {
             while (cursor.moveToNext()) {
-                String mood = cursor.getString(columnIndex);
+                String mood = cursor.getString(moodIndex);
+                String date = cursor.getString(dateIndex);
                 moodList.add(mood);
+                dateList.add(date);
             }
         }
         cursor.close();
-        return moodList;
     }
 
     private float getMoodValue(String mood) {

@@ -5,14 +5,18 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "mood_history.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     public static final String TABLE_MOOD_HISTORY = "mood_history";
     private static final String COLUMN_ID = "_id";
     public static final String COLUMN_MOOD = "mood";
-    //public static final String TABLE_MOOD_HISTORY = "mood_history";
+    public static final String COLUMN_DATE = "date";
 
 
     public DatabaseHelper(Context context) {
@@ -28,7 +32,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String createTableQuery = "CREATE TABLE " + TABLE_MOOD_HISTORY + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + COLUMN_MOOD + " TEXT"
+                + COLUMN_MOOD + " TEXT,"
+                + COLUMN_DATE + " TEXT" // Add date column
                 + ")";
         db.execSQL(createTableQuery);
     }
@@ -44,6 +49,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_MOOD, mood);
+        // Add the current date to the database
+        values.put(COLUMN_DATE, getCurrentDateTime());
         return db.insert(TABLE_MOOD_HISTORY, null, values);
+    }
+
+    private String getCurrentDateTime() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.getDefault());
+        return sdf.format(new Date());
     }
 }

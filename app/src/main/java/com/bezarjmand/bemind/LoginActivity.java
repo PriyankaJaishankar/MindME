@@ -1,10 +1,7 @@
 package com.bezarjmand.bemind;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -19,29 +16,25 @@ public class LoginActivity extends AppCompatActivity {
     private EditText usernameEditText;
     private Button loginButton;
     private Button createAccountButton;
-    private SQLiteDatabase db;
+    private DatabaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        dbHelper = new DatabaseHelper(this);
+
         usernameEditText = findViewById(R.id.usernameEditText);
         loginButton = findViewById(R.id.loginButton);
         createAccountButton = findViewById(R.id.createAccountButton);
-
-        // Open the database
-        db = openOrCreateDatabase("MotivationalDB", MODE_PRIVATE, null);
-
-        // Create the "users" table if it doesn't exist
-        db.execSQL("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT)");
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String username = usernameEditText.getText().toString();
                 if (!username.isEmpty()) {
-                    if (isExistingUser(username)) {
+                    if (dbHelper.isExistingUser(username)) {
                         // Display a welcome back message
                         Toast.makeText(LoginActivity.this, "Welcome back, " + username + "!", Toast.LENGTH_SHORT).show();
 
@@ -62,16 +55,13 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
-
         createAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String username = usernameEditText.getText().toString();
                 if (!username.isEmpty()) {
-                    if (!isExistingUser(username)) {
-                        // Save the username to the database
-                        saveUsernameToDatabase(username);
+                    if (!dbHelper.isExistingUser(username)) {
+                        dbHelper.saveUsernameToDatabase(username);
 
                         // Display an account created message
                         Toast.makeText(LoginActivity.this, "Account created for " + username, Toast.LENGTH_SHORT).show();
@@ -88,29 +78,5 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-
-    }
-
-    private boolean isExistingUser(String username) {
-        // Query the "users" table to check if the username exists
-        String query = "SELECT * FROM users WHERE username = ?";
-        Cursor cursor = db.rawQuery(query, new String[]{username});
-        boolean exists = cursor.getCount() > 0;
-        cursor.close();
-        return exists;
-    }
-
-    private void saveUsernameToDatabase(String username) {
-        // Insert the new username into the table
-        ContentValues values = new ContentValues();
-        values.put("username", username);
-        db.insert("users", null, values);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        // Close the database
-        db.close();
     }
 }

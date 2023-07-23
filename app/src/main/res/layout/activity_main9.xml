@@ -12,23 +12,27 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hier sind die Schritte der Mantra-Meditation"
-        android:textSize="24sp"
-        android:textStyle="bold"
         android:layout_gravity="center"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:text="Hier sind die Schritte der Mantra-Meditation"
+        android:textSize="34sp"
+        android:textStyle="bold" />
 
     <!-- Step Text in Bold and Centered -->
     <TextView
         android:id="@+id/step_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Schritt 1: Finden Sie einen ruhigen und komfortablen Ort."
-        android:textSize="18sp"
-        android:textStyle="bold"
         android:layout_gravity="center"
-        android:gravity="center"/>
-
+        android:gravity="center"
+        android:text="Schritt 1: Finden Sie einen ruhigen und komfortablen Ort."
+        android:textSize="48sp"
+        android:textStyle="bold" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:src="@drawable/mantra_meditation" />
     <Button
         android:id="@+id/audioButtonm1"
         android:layout_width="wrap_content"

@@ -1,29 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/manifet_chill"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center">
 
     <Button
         android:id="@+id/mt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="400dp"
+        android:layout_height="100dp"
         android:layout_centerInParent="true"
+        android:layout_margin="20dp"
         android:onClick="onClickMoodTracking"
         android:text="Stimmungsverfolgung"
-        android:textSize="20sp" />
+        android:textSize="34sp" />
 
     <Button
         android:id="@+id/mg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="400dp"
+        android:layout_height="100dp"
         android:layout_below="@id/mt"
         android:layout_centerInParent="true"
-        android:layout_marginTop="16dp"
+        android:layout_margin="20dp"
         android:onClick="onClickMoodGlazing"
         android:text="Geistesübungen"
-        android:textSize="20sp" />
+        android:textSize="34sp" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_margin="20dp"
+        android:text="Abmelden"
+        android:textSize="34dp" />
+
+</LinearLayout>

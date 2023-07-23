@@ -134,19 +134,7 @@ public class ViewHistory extends AppCompatActivity {
             }
         });
 
-        logoutButton = findViewById(R.id.logoutButton);
-        logoutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Handle logout here
-                sessionManager.logoutUser();
 
-                // Redirect to the login screen
-                Intent intent = new Intent(ViewHistory.this, LoginActivity.class);
-                startActivity(intent);
-                finish(); // Close the ViewHistory activity to prevent going back to it after logout
-            }
-        });
         // Set click listeners for the chart
         moodChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
             @Override

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -40,7 +39,7 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
 
         if (loggedInUsername != null && !loggedInUsername.isEmpty()) {
             // User is logged in, do the required actions here
-            Toast.makeText(this, "Welcome, " + loggedInUsername, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Welcome, " + loggedInUsername, Toast.LENGTH_SHORT).show();
         } else {
             // User is not logged in, handle the scenario accordingly
             // For example, you can redirect the user to the login screen
@@ -144,7 +143,12 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
             }
         });
     }
-
+    private String getLoggedInUsername() {
+        // Replace this with the actual implementation to get the username of the logged-in user
+        // For example, if you are using a session management or authentication system, use that to get the username.
+        // If you have stored the username during login, retrieve it from there and return it.
+        return "username"; // Replace "username" with the actual logged-in user's username.
+    }
     @Override
     public void onClick(View v) {
         // Get the text of the clicked button

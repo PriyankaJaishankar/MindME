@@ -24,16 +24,16 @@
         android:layout_height="wrap_content"
         android:layout_margin="32dp"
         android:gravity="center"
-        android:text="Let's get started with tracking your mood. Click Below!"
+        android:text="Beginnen wir mit der Erfassung Ihrer Stimmung. Unten klicken!"
         android:textColor="@android:color/black"
         android:textSize="34sp" />
 
     <Button
         android:id="@+id/furtherToMoodTracking"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="80dp"
         android:layout_margin="20dp"
         android:insetLeft="0dp"
-        android:text="Let's Go!"
+        android:text="Los geht's!"
         android:textSize="34sp" />
 </LinearLayout>

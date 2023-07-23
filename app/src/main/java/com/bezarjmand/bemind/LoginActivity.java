@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (!username.isEmpty()) {
                     if (dbHelper.isExistingUser(username)) {
                         // Display a welcome back message
-                        Toast.makeText(LoginActivity.this, "Welcome back, " + username + "!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Willkommen zurück, " + username + "!", Toast.LENGTH_SHORT).show();
 
                         // Save the username to the session
                         SessionManager sessionManager = new SessionManager(LoginActivity.this);
@@ -52,10 +52,10 @@ public class LoginActivity extends AppCompatActivity {
                         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                         imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
                     } else {
-                        Toast.makeText(LoginActivity.this, "User does not exist. Please create an account.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Der Benutzer existiert nicht. Bitte erstellen Sie ein Konto.", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(LoginActivity.this, "Please enter a username", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Bitte geben Sie einen Benutzernamen ein", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -77,10 +77,10 @@ public class LoginActivity extends AppCompatActivity {
                         startActivity(intent);
                         finish(); // Optional: Finish the LoginActivity to prevent going back on back press
                     } else {
-                        Toast.makeText(LoginActivity.this, "User already exists. Please log in.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Der Benutzer existiert bereits. Bitte melden Sie sich an.", Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(LoginActivity.this, "Please enter a username", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Bitte geben Sie einen Benutzername", Toast.LENGTH_SHORT).show();
                 }
             }
         });

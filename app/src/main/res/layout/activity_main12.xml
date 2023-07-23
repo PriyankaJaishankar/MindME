@@ -12,22 +12,22 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hier sind die Schritte der Atemübung"
-        android:textSize="24sp"
-        android:textStyle="bold"
         android:layout_gravity="center"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:text="Hier sind die Schritte der Atemübung"
+        android:textSize="34sp"
+        android:textStyle="bold" />
 
     <!-- Step Text in Bold and Centered -->
     <TextView
         android:id="@+id/step_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Schritt 3: Atmen Sie langsam durch den Mund aus und lassen Sie dabei jegliche Anspannung oder Stress los."
-        android:textSize="18sp"
-        android:textStyle="bold"
         android:layout_gravity="center"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:text="Schritt 3: Atmen Sie langsam durch den Mund aus und lassen Sie dabei jegliche Anspannung oder Stress los."
+        android:textSize="48sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/audioButton3"

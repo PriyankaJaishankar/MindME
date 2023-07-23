@@ -25,6 +25,7 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
+
 public class ViewHistory extends AppCompatActivity {
     private BarChart moodChart;
     private List<String> moodList;
@@ -34,21 +35,37 @@ public class ViewHistory extends AppCompatActivity {
 
     int[] colors = ColorTemplate.MATERIAL_COLORS;
 
+    private String loggedInUsername;
+
+    private Button logoutButton;
+    private SessionManager sessionManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.view_history);
-// Find the BarChart view
+
+        // Find the BarChart view
         moodChart = findViewById(R.id.moodChart);
 
         // Customize the grid color
         moodChart.setDrawGridBackground(true);
         moodChart.setGridBackgroundColor(R.color.lightGray);
 
-        // Fetch mood data with date and time from the database
-        moodList = new ArrayList<>();
-        dateList = new ArrayList<>();
-        fetchMoodData();
+        // Get the logged-in username from the session
+        sessionManager = new SessionManager(this);
+        loggedInUsername = sessionManager.getLoggedInUsername();
+
+        if (loggedInUsername != null && !loggedInUsername.isEmpty()) {
+            // Fetch mood data with date and time from the database for the currently logged-in user
+            fetchMoodDataForLoggedInUser();
+        } else {
+            // Handle the case where the logged-in username is null or empty
+            // For example, you can show an error message or redirect to the login screen
+            Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show();
+            finish(); // Close the activity or redirect to the login screen
+            return;
+        }
 
         // Customize the X-axis color
         XAxis xAxis = moodChart.getXAxis();
@@ -64,7 +81,6 @@ public class ViewHistory extends AppCompatActivity {
 
         YAxis rightAxis = moodChart.getAxisRight();
         rightAxis.setEnabled(false);
-
 
         // Create a dataset with the mood entries
         List<BarEntry> entries = new ArrayList<>();
@@ -90,7 +106,6 @@ public class ViewHistory extends AppCompatActivity {
         moodChart.getLegend().setEnabled(false);
         moodChart.setFitBars(true);
         moodChart.invalidate();
-
 
         Button backToMoodSelectionButton = findViewById(R.id.backToMoodSelectionButton);
         backToMoodSelectionButton.setOnClickListener(new View.OnClickListener() {
@@ -118,7 +133,21 @@ public class ViewHistory extends AppCompatActivity {
                 clearHistory();
             }
         });
-// Set click listeners for the chart
+
+        logoutButton = findViewById(R.id.logoutButton);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Handle logout here
+                sessionManager.logoutUser();
+
+                // Redirect to the login screen
+                Intent intent = new Intent(ViewHistory.this, LoginActivity.class);
+                startActivity(intent);
+                finish(); // Close the ViewHistory activity to prevent going back to it after logout
+            }
+        });
+        // Set click listeners for the chart
         moodChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
             @Override
             public void onValueSelected(Entry e, Highlight h) {
@@ -135,77 +164,69 @@ public class ViewHistory extends AppCompatActivity {
                 // Do nothing when nothing is selected
             }
         });
-
     }
 
-
-
-
-
-private void fetchMoodData() {
+    private void fetchMoodDataForLoggedInUser() {
         SQLiteDatabase db = databaseHelper.getReadableDatabase();
         Cursor cursor = db.query(DatabaseHelper.TABLE_MOOD_HISTORY,
                 new String[]{DatabaseHelper.COLUMN_MOOD, DatabaseHelper.COLUMN_DATE},
-                null, null, null, null, null);
+                DatabaseHelper.COLUMN_USERNAME + "=?",
+                new String[]{loggedInUsername},
+                null, null, null);
         int moodIndex = cursor.getColumnIndex(DatabaseHelper.COLUMN_MOOD);
         int dateIndex = cursor.getColumnIndex(DatabaseHelper.COLUMN_DATE);
+        moodList = new ArrayList<>();
+        dateList = new ArrayList<>();
         if (moodIndex != -1 && dateIndex != -1) {
             while (cursor.moveToNext()) {
                 String mood = cursor.getString(moodIndex);
+                if (mood != null) {
+                    moodList.add(mood);
+                }
                 String date = cursor.getString(dateIndex);
-                moodList.add(mood);
-                dateList.add(date);
+                if (date != null) {
+                    dateList.add(date);
+                }
             }
         }
         cursor.close();
     }
 
     private float getMoodValue(String mood) {
-        // Assign a numerical value to each mood (e.g., Very Happy: 5, Happy: 4, Neutral: 3, etc.)
-        // Adjust this logic based on your mood scale
-        float value = 0;
-        switch (mood) {
-            case "Glücklich\uD83D\uDE04":
-                value = 12;
-                break;
-            case "Zufrieden\uD83D\uDE0A":
-                value = 11;
-                break;
-            case "Normal\uD83D\uDE10":
-                value = 10;
-                break;
-            case "Ruhig\uD83D\uDE0C":
-                value = 9;
-                break;
-            case "Traurig\uD83D\uDE22":
-                value = 8;
-                break;
-            case "Frustriert\uD83D\uDE20":
-                value = 7;
-                break;
-            case "Ängstlich\uD83D\uDE1F":
-                value = 6;
-                break;
-            case "Wütend\uD83D\uDE21":
-                value = 5;
-                break;
-            case "Einsam\uD83D\uDE14":
-                value = 4;
-                break;
-            case "Müde\uD83D\uDE2B":
-                value = 3;
-                break;
-            case "Langweilig\uD83D\uDE12":
-                value = 2;
-                break;
-            case "Schläfrig\uD83D\uDE34":
-                value = 1;
-                break;
+        if (mood != null) {
+            // Assign a numerical value to each mood (e.g., Very Happy: 5, Happy: 4, Neutral: 3, etc.)
+            // Adjust this logic based on your mood scale
+            switch (mood) {
+                case "Glücklich\uD83D\uDE04":
+                    return 12;
+                case "Zufrieden\uD83D\uDE0A":
+                    return 11;
+                case "Normal\uD83D\uDE10":
+                    return 10;
+                case "Ruhig\uD83D\uDE0C":
+                    return 9;
+                case "Traurig\uD83D\uDE22":
+                    return 8;
+                case "Frustriert\uD83D\uDE20":
+                    return 7;
+                case "Ängstlich\uD83D\uDE1F":
+                    return 6;
+                case "Wütend\uD83D\uDE21":
+                    return 5;
+                case "Einsam\uD83D\uDE14":
+                    return 4;
+                case "Müde\uD83D\uDE2B":
+                    return 3;
+                case "Langweilig\uD83D\uDE12":
+                    return 2;
+                case "Schläfrig\uD83D\uDE34":
+                    return 1;
+            }
         }
-        return value;
-
-
+        // Return 0 or any default value if mood is null or not recognized
+        return 0;
     }
+
     private void clearHistory() {
         // Clear the history from the database
         SQLiteDatabase db = databaseHelper.getWritableDatabase();

@@ -164,32 +164,53 @@
         <LinearLayout
             android:layout_width="635dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
+            android:layout_gravity="right|center_vertical"
             android:layout_weight="1"
             android:orientation="vertical">
 
-
-            <Button
-                android:id="@+id/furtherToMainButton"
-                android:layout_width="200dp"
+            <GridLayout
+                android:id="@+id/moodGridLayout"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right|center_horizontal"
-                android:layout_marginTop="8dp"
-                android:text="Weiter" />
+                android:layout_gravity="center"
+                android:alignmentMode="alignMargins"
+                android:columnCount="2"
+                android:columnOrderPreserved="false"
+                android:rowCount="2">
 
-            <Button
-                android:id="@+id/backToMoodSelectionButton"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right|center_horizontal"
-                android:text="Zurück" />
+                <Button
+                    android:id="@+id/backToMoodSelectionButton"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_horizontal"
+                    android:layout_margin="5dp"
+                    android:text="Zurück" />
 
-            <Button
-                android:id="@+id/clearHistoryButton"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right|center_horizontal"
-                android:text="Verlauf löschen" />
+                <Button
+                    android:id="@+id/furtherToMainButton"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_horizontal"
+                    android:layout_margin="5dp"
+                    android:text="Weiter" />
+
+
+                <Button
+                    android:id="@+id/clearHistoryButton"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_horizontal"
+                    android:layout_margin="5dp"
+                    android:text="Verlauf löschen" />
+
+                <Button
+                    android:id="@+id/logoutButton"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center_horizontal"
+                    android:layout_margin="5dp"
+                    android:text="Abmelden" />
+            </GridLayout>
 
         </LinearLayout>
 

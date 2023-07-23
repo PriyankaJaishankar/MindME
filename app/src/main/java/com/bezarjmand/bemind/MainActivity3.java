@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,6 +19,8 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
     private List<String> selectedMoods;
 
     private DatabaseHelper databaseHelper;
+    private SessionManager sessionManager;
+    private String loggedInUsername;
 
 
     @Override
@@ -28,6 +31,23 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
 
         // Initialize the DatabaseHelper
         databaseHelper = new DatabaseHelper(this);
+
+        // Initialize the SessionManager
+        sessionManager = new SessionManager(this);
+
+        // Retrieve the logged-in username from the session
+        loggedInUsername = sessionManager.getLoggedInUsername();
+
+        if (loggedInUsername != null && !loggedInUsername.isEmpty()) {
+            // User is logged in, do the required actions here
+            Toast.makeText(this, "Welcome, " + loggedInUsername, Toast.LENGTH_SHORT).show();
+        } else {
+            // User is not logged in, handle the scenario accordingly
+            // For example, you can redirect the user to the login screen
+            Intent intent = new Intent(MainActivity3.this, LoginActivity.class);
+            startActivity(intent);
+            finish(); // Close MainActivity3 to prevent going back to it after login
+        }
 
         // Find views by their IDs
         selectedMoodTextView = findViewById(R.id.selectedMoodTextView);
@@ -56,13 +76,18 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
         applyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Get the selected mood
                 String selectedMood = selectedMoodTextView.getText().toString();
 
                 // Add the selected mood to the list
                 selectedMoods.add(selectedMood);
-                // Insert the selected mood into the database
-                databaseHelper.insertMood(selectedMood);
+
+                // Get the username of the logged-in user from the session
+                SessionManager sessionManager = new SessionManager(MainActivity3.this);
+                String username = sessionManager.getLoggedInUsername();
+
+                // Insert the selected mood and username into the database
+                databaseHelper.insertMood(selectedMood, username);
+
 
                 // Display the corresponding message for the selected mood
                 switch (selectedMood) {

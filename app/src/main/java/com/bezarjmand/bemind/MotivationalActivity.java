@@ -22,6 +22,8 @@ public class MotivationalActivity extends AppCompatActivity {
     private TextView thoughtTextView;
     private Button furtherToMoodTrackingButton;
 
+    private SessionManager sessionManager;
+
     private List<String> loadMotivationalThoughtsFromDatabase() {
         List<String> thoughts = new ArrayList<>();
 
@@ -54,6 +56,22 @@ public class MotivationalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_motivational);
+
+        // Initialize the SessionManager
+        sessionManager = new SessionManager(this);
+
+        // Check if the user is logged in
+        String loggedInUsername = sessionManager.getLoggedInUsername();
+        if (loggedInUsername != null && !loggedInUsername.isEmpty()) {
+            // User is logged in, do the required actions here
+            // Load motivational thoughts, display random thought, etc.
+        } else {
+            // User is not logged in, handle the scenario accordingly
+            // For example, redirect to the login screen
+            Intent intent = new Intent(MotivationalActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish(); // Close the MotivationalActivity to prevent going back to it after login
+        }
 
         thoughtTextView = findViewById(R.id.thoughtTextView);
         furtherToMoodTrackingButton = findViewById(R.id.furtherToMoodTracking);

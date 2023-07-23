@@ -13,26 +13,19 @@ import java.util.Locale;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "mood_history.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3; // Increase the version number
     public static final String TABLE_MOOD_HISTORY = "mood_history";
     private static final String COLUMN_ID = "_id";
     public static final String COLUMN_MOOD = "mood";
     public static final String COLUMN_DATE = "date";
-
-    public static final String TABLE_USERS = "users";
-    public static final String COLUMN_USERNAME = "username";
+    public static final String COLUMN_USERNAME = "username"; // New column for username
 
     private static final String CREATE_TABLE_MOOD_HISTORY_QUERY = "CREATE TABLE IF NOT EXISTS " +
             TABLE_MOOD_HISTORY + "(" +
             COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
             COLUMN_MOOD + " TEXT, " +
-            COLUMN_DATE + " TEXT" +
-            ")";
-
-    private static final String CREATE_TABLE_USERS_QUERY = "CREATE TABLE IF NOT EXISTS " +
-            TABLE_USERS + "(" +
-            COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            COLUMN_USERNAME + " TEXT" +
+            COLUMN_DATE + " TEXT, " +
+            COLUMN_USERNAME + " TEXT" + // Add the new column for username
             ")";
 
     public DatabaseHelper(Context context) {
@@ -41,14 +34,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(CREATE_TABLE_USERS_QUERY); // Create the users table
         db.execSQL(CREATE_TABLE_MOOD_HISTORY_QUERY); // Create the mood history table
     }
-
-    public static String getTableMoodHistory() {
-        return TABLE_MOOD_HISTORY;
-    }
-
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -57,12 +44,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public long insertMood(String mood) {
+    public long insertMood(String mood, String username) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_MOOD, mood);
         // Add the current date to the database
         values.put(COLUMN_DATE, getCurrentDateTime());
+        values.put(COLUMN_USERNAME, username); // Save the username with the mood
         return db.insert(TABLE_MOOD_HISTORY, null, values);
     }
 
@@ -73,7 +61,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public boolean isExistingUser(String username) {
         SQLiteDatabase db = getReadableDatabase();
-        String query = "SELECT * FROM " + TABLE_USERS + " WHERE " + COLUMN_USERNAME + "=?";
+        String query = "SELECT * FROM " + TABLE_MOOD_HISTORY + " WHERE " + COLUMN_USERNAME + "=?";
         Cursor cursor = db.rawQuery(query, new String[]{username});
         boolean exists = cursor.getCount() > 0;
         cursor.close();
@@ -84,6 +72,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_USERNAME, username);
-        return db.insert(TABLE_USERS, null, values);
+        return db.insert(TABLE_MOOD_HISTORY, null, values);
     }
 }

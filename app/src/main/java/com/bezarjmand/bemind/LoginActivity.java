@@ -32,11 +32,16 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Inside the loginButton.setOnClickListener after successful login
                 String username = usernameEditText.getText().toString();
                 if (!username.isEmpty()) {
                     if (dbHelper.isExistingUser(username)) {
                         // Display a welcome back message
                         Toast.makeText(LoginActivity.this, "Welcome back, " + username + "!", Toast.LENGTH_SHORT).show();
+
+                        // Save the username to the session
+                        SessionManager sessionManager = new SessionManager(LoginActivity.this);
+                        sessionManager.saveUsername(username);
 
                         // Start the MotivationalActivity
                         Intent intent = new Intent(LoginActivity.this, MotivationalActivity.class);
@@ -52,6 +57,7 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(LoginActivity.this, "Please enter a username", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
 

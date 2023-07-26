@@ -28,9 +28,8 @@
 
         <Button
             android:id="@+id/loginButton"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
             android:text="Anmeldung"
             android:textSize="34sp" />
 
@@ -38,15 +37,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:gravity="center_horizontal"
             android:text="Neuer Benutzer? Klicken Sie unten, um ein neues Konto zu erstellen!"
             android:textSize="34sp" />
 
         <Button
             android:id="@+id/createAccountButton"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
             android:layout_marginTop="16dp"
             android:text="Konto erstellen"
             android:textSize="34sp" />

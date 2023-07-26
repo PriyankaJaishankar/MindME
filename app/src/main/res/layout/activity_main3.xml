@@ -7,15 +7,16 @@
     android:padding="16dp">
 
     <!-- Add a TextView to display the question -->
-    <TextView
-        android:id="@+id/feelingTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="8dp"
-        android:text="Wie geht es Ihnen heute?"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="34sp" />
+        <TextView
+            android:id="@+id/feelingTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:text="Wie geht es Ihnen heute?"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
     <!-- Add a GridLayout to hold the mood options -->
     <GridLayout
@@ -33,7 +34,7 @@
             android:id="@+id/happyButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="160dp"
+            android:width="180dp"
             android:text="Glücklich😄"
             android:textSize="20sp" />
 
@@ -42,7 +43,7 @@
             android:id="@+id/sadButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="160dp"
+            android:width="180dp"
             android:text="Traurig😢"
             android:textSize="20sp" />
 
@@ -50,7 +51,7 @@
             android:id="@+id/normalEmotionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="160dp"
+            android:width="180dp"
             android:text="Normal😐"
             android:textSize="20sp" />
 
@@ -58,7 +59,7 @@
             android:id="@+id/satisfiedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="160dp"
+            android:width="180dp"
             android:text="Zufrieden😊"
             android:textSize="20sp" />
 
@@ -66,7 +67,7 @@
             android:id="@+id/calmButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="160dp"
+            android:width="180dp"
             android:text="Ruhig😌"
             android:textSize="20sp" />
 
@@ -74,7 +75,7 @@
             android:id="@+id/frustratedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="160dp"
+            android:width="180dp"
             android:text="Frustriert😠"
             android:textSize="20sp" />
 
@@ -82,7 +83,7 @@
             android:id="@+id/anxiousButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="160dp"
+            android:width="180dp"
             android:text="Ängstlich😟"
             android:textSize="20sp" />
 
@@ -90,7 +91,7 @@
             android:id="@+id/angryButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="160dp"
+            android:width="180dp"
             android:text="Wütend😡"
             android:textSize="20sp" />
 
@@ -98,7 +99,7 @@
             android:id="@+id/lonelyButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="160dp"
+            android:width="180dp"
             android:text="Einsam😔"
             android:textSize="20sp" />
 
@@ -106,7 +107,7 @@
             android:id="@+id/tiredButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="160dp"
+            android:width="180dp"
             android:text="Müde😫"
             android:textSize="20sp" />
 
@@ -114,7 +115,7 @@
             android:id="@+id/boredButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="160dp"
+            android:width="180dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:text="Langweilig😒"
@@ -125,22 +126,22 @@
             android:id="@+id/sleepyButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:width="160dp"
+            android:width="180dp"
             android:text="Schläfrig😴"
             android:textSize="20sp" />
 
     </GridLayout>
 
     <!-- Add an Apply button -->
-    <Button
-        android:id="@+id/applyButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
-        android:text="Bestätigen"
-        android:textSize="20sp"
-        android:textStyle="normal" />
+        <Button
+            android:id="@+id/applyButton"
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:text="Bestätigen"
+            android:textSize="20sp"
+            android:textStyle="normal" />
 
     <!-- Add a TextView to display the selected mood -->
     <TextView
@@ -167,7 +168,7 @@
         <Button
             android:id="@+id/viewHistoryButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="1dp"
             android:text="Verlauf anzeigen"

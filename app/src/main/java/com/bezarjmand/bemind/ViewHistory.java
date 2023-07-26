@@ -62,7 +62,7 @@ public class ViewHistory extends AppCompatActivity {
         } else {
             // Handle the case where the logged-in username is null or empty
             // For example, you can show an error message or redirect to the login screen
-            Toast.makeText(this, "User not logged in", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Benutzer nicht eingeloggt", Toast.LENGTH_SHORT).show();
             finish(); // Close the activity or redirect to the login screen
             return;
         }
@@ -144,7 +144,7 @@ public class ViewHistory extends AppCompatActivity {
                 String date = dateList.get(position);
 
                 // Show the date, time, and corresponding mood when a bar is clicked
-                Toast.makeText(ViewHistory.this, "Date: " + date + "\nMood: " + mood, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ViewHistory.this, "Datum: " + date + "\nStimmung: " + mood, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -221,7 +221,7 @@ public class ViewHistory extends AppCompatActivity {
         db.delete(DatabaseHelper.TABLE_MOOD_HISTORY, null, null);
 
         // Display a message that the history is cleared
-        Toast.makeText(this, "History cleared", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Geschichte geklärt", Toast.LENGTH_SHORT).show();
 
         // Refresh the activity to update the chart and mood list
         recreate();

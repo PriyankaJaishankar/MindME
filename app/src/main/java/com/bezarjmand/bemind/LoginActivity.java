@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
                         dbHelper.saveUsernameToDatabase(username);
 
                         // Display an account created message
-                        Toast.makeText(LoginActivity.this, "Account created for " + username, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Konto erstellt für " + username, Toast.LENGTH_SHORT).show();
 
                         // Start the MotivationalActivity
                         Intent intent = new Intent(LoginActivity.this, MotivationalActivity.class);
